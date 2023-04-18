@@ -34,12 +34,14 @@ const slider = tns({
   controls: false,
   nav: false,
   items: 4,
+  slideBy: 2,
   rewind: true,
   gutter: 20,
   edgePadding: 5,
   responsive: {
     768: {
       items: 6,
+      slideBy: 1,
     },
   },
   // autoHeight: true,
@@ -51,8 +53,21 @@ const slider = tns({
 
 supportButtonNext.addEventListener('click', () => {
   slider.goTo('next');
-});
-
-slider.events.on('touchEnd', () => {
-  console.log('end');
+  const getInfo = slider.getInfo();
+  if (getInfo.slideBy === 2) {
+    if (getInfo.displayIndex === 6) {
+      supportButtonNext.style.transform = 'rotate(180deg)';
+    }
+    if (getInfo.displayIndex !== 6) {
+      supportButtonNext.style.transform = 'none';
+    }
+  }
+  if (getInfo.slideBy === 1) {
+    if (getInfo.displayIndex === 4) {
+      supportButtonNext.style.transform = 'rotate(180deg)';
+    }
+    if (getInfo.displayIndex !== 4) {
+      supportButtonNext.style.transform = 'none';
+    }
+  }
 });
