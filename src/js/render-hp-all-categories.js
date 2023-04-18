@@ -1,4 +1,5 @@
 import { getBookData } from './getBooksData.js';
+import { renderCategoryPage } from './render-hp-default-markup.js';
 import { createCategoryString } from './getCategoryString.js';
 import { createFirstPartTitle } from './getCategoryTitle.js';
 import { createLastPartTitle } from './getCategoryTitle.js';
@@ -22,12 +23,15 @@ export function renderCategoryList() {
 
 const list = document.querySelector('.book-categories');
 const categoryList = document.querySelector('.categories-list');
-
+const categoryAll = document.querySelector('.all');
+categoryAll.addEventListener('click', renderCategoryPage);
 list.addEventListener('click', getString);
 
 function getString(e) {
   e.preventDefault();
+  console.log(e.target.classList.contains('all'));
   categoryList.innerHTML = '';
+
   const data = e.target.innerHTML;
 
   // Добавляем класс "active" к нажатому элементу списка
@@ -71,8 +75,13 @@ function getString(e) {
         '.main-title__second-part'
       );
 
-      firstSpanMainTitle.textContent = createFirstPartTitle(data);
-      secondSpanMainTitle.textContent = createLastPartTitle(data);
+      if (e.target.classList.contains('all')) {
+        firstSpanMainTitle.textContent = 'Best Sellers';
+        secondSpanMainTitle.textContent = 'Books';
+      } else {
+        firstSpanMainTitle.textContent = createFirstPartTitle(data);
+        secondSpanMainTitle.textContent = createLastPartTitle(data);
+      }
 
       // const wordsArray = data.split(' ');
       // const lastWordText = wordsArray.pop();

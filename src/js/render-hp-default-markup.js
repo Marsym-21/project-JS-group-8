@@ -6,15 +6,15 @@ import { renderCategoryList } from './render-hp-all-categories.js';
 const booksInform = new getBookData();
 const firstSpanMainTitle = document.querySelector('.main-title__first-part');
 const secondSpanMainTitle = document.querySelector('.main-title__second-part');
-firstSpanMainTitle.textContent = 'Best Sellers';
-secondSpanMainTitle.textContent = 'Books';
 
 const imgAttributeAlt = 'book cover photo';
 
 const categoryList = document.querySelector('.categories-list');
 
-function renderCategoryPage() {
+export function renderCategoryPage() {
   // Get reference to the ul element using its id
+  firstSpanMainTitle.textContent = 'Best Sellers';
+  secondSpanMainTitle.textContent = 'Books';
   let categoryArray = [];
   booksInform
     .getPromTopBooks()
