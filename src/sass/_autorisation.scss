@@ -1,0 +1,427 @@
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background: #4F2EE8;
+  }
+
+//--------------------------------begin of the hidden parts-------------------------------------//
+
+  .backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.input-control.is-hidden {
+  position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+.modal__input.is-hidden {
+  position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+
+.btnmodal__input-pass.is-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+  }
+
+//--------------------------------end of the hidden parts-------------------------------------//
+
+//-------------------------------------//модалка//-------------------------------------//
+
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 335px;
+  padding: 40px 20px; 
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
+  background: #F6F6F6;
+  border: 2px solid #111111;  
+  border-radius: 18px;
+
+  @media screen and (min-width: 768px) {
+    padding: 80px 40px 40px 40px;
+  width: 575px;
+  }
+}
+
+//------------------------------------//модалка darkmode//-------------------------------------//
+
+.modal.dark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 335px;
+  padding: 40px 20px; 
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
+  background: #202024;
+  border: 2px solid #F6F6F6;  
+  border-radius: 18px;
+
+  @media screen and (min-width: 768px) {
+    padding: 80px 40px 40px 40px;
+  width: 575px;
+  }
+}
+
+
+//------------------------------------//велика кнопка SIGN IN та SIGN UP//-------------------------------------//
+#form {
+  margin: 0;
+  width: 291px;
+
+  @media screen and (min-width: 768px) {
+    width: 495px;
+  }
+
+}
+
+
+#form button.btnmodal__input-pass {
+  padding: 0;
+  width: 291px;
+  height: 50px;
+  border: 2px solid #111111;
+  border-radius: 40px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  background: #111111;
+  color: #F3F3F3;
+  margin-bottom: 14px;
+
+
+  @media screen and (min-width: 768px) {
+  width: 495px;
+  height: 64px;
+  border-radius: 40px;
+  margin-bottom: 16px;
+  font-size: 18px;
+  line-height: 24px;
+  }
+}
+
+//------------------------------------//велика кнопка SIGN IN та SIGN UP  darkmode//-------------------------------------//
+
+#form button.btnmodal__input-pass.dark {
+  padding: 0;
+  width: 291px;
+  height: 50px;
+  border: 2px solid #F3F3F3;
+  border-radius: 40px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  background: #F3F3F3;
+  color: #111111;
+  margin-bottom: 14px;
+
+
+  @media screen and (min-width: 768px) {
+  width: 495px;
+  height: 64px;
+  border-radius: 40px;
+  margin-bottom: 16px;
+  font-size: 18px;
+  line-height: 24px;
+  }
+}
+
+.input-control {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+//------------------------------------//інпут//  -------------------------------------//
+
+.input-control input {
+  padding: 0;
+  border: 2px solid #111111;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: #111111;
+  border-radius: 40px;
+  width: 291px;
+  height: 50px;
+  padding-left: 24px;
+  margin-bottom: 24px;
+
+  @media screen and (min-width: 768px) {
+    width: 495px;
+    height: 60px;
+    font-size: 18px;
+    line-height: 24px;
+    padding-left: 40px;
+    margin-bottom: 28px;
+  }
+}
+
+//------------------------------------//інпут darkmode//  -------------------------------------//
+
+.input-control.dark input {
+  padding: 0;
+  border: 2px solid #F6F6F6;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: #F6F6F6;
+  border-radius: 40px;
+  width: 291px;
+  height: 50px;
+  padding-left: 24px;
+  margin-bottom: 24px;
+
+  @media screen and (min-width: 768px) {
+    width: 495px;
+    height: 60px;
+    font-size: 18px;
+    padding-left: 40px;
+    margin-bottom: 28px;
+  }
+}
+
+//------------------------------------//колір плейсхолдеру//  -------------------------------------//
+
+input::placeholder {
+    color: #111111;
+  }
+
+//------------------------------------//колір плейсхолдеру darkmode//  -------------------------------------//
+
+input.dark::placeholder {
+    color: #F6F6F6;
+  }
+
+
+.last {
+
+  @media screen and (min-width: 768px) {  
+   margin-bottom: 12px;
+} }
+
+//------------------------------------//кнопка закриття модалки//  -------------------------------------//
+
+.modal__btn {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #F3F3F3;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  top: 14px;
+  right: 14px;
+  width: 20px;
+  height: 20px;
+
+  @media screen and (min-width: 768px) { 
+    top: 24px;
+    right: 24px;
+    width: 28px;
+    height: 28px;
+    height: 30px;
+  }
+}
+
+//------------------------------------//кнопка закриття модалки darkmode//  -------------------------------------//#202024;
+
+.modal__btn.dark {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #202024;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  top: 14px;
+  right: 14px;
+  width: 20px;
+  height: 20px;
+
+  @media screen and (min-width: 768px) { 
+    top: 24px;
+    right: 24px;
+    width: 28px;
+    height: 28px;
+    height: 30px;
+  }
+}
+
+//------------------------------------//сірі кнопки SIGN IN та SIGN UP//-------------------------------------//  
+
+.sign-buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+
+//------------------------------------//проміжок між SIGN IN та SIGN UP//-------------------------------------//  
+
+.gap {
+    gap: 20px;
+}
+
+//------------------------------------//сіра кнопка SIGN IN та SIGN UP//-------------------------------------//  
+
+.button-modal-approve {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: rgba(17, 17, 17, 0.5);
+  background: #F3F3F3;
+  outline: none;
+  border: none;
+  padding: 0;
+
+  &:hover,
+  &:focus {
+    color: #4F2EE8;
+    text-decoration: underline; 
+  }
+
+  @media screen and (min-width: 768px) { 
+    font-size: 18px;
+    line-height: 24px;
+  
+}
+}
+
+//------------------------------------//сіра кнопка SIGN IN та SIGN UP darkmode//-------------------------------------//  
+
+.button-modal-approve.dark {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #F6F6F680;
+  background: #202024;
+  outline: none;
+  border: none;
+  padding: 0;
+
+  &:hover,
+  &:focus {
+    color: #4F2EE8;
+    text-decoration: underline; 
+  }
+
+  @media screen and (min-width: 768px) { 
+    font-size: 18px;
+    line-height: 24px;
+  
+}
+}
+//------------------------------------//кнопка SIGN IN та SIGN UP перемикання мыж кнопками та зміна статусу//-------------------------------------//  
+
+.active {
+    color: #4F2EE8;
+    text-decoration: underline; 
+}
+
+//------------------------------------//SVG-шки//-------------------------------------//
+
+.envelope {
+  position: relative;
+  width: 291px;
+
+  @media screen and (min-width: 768px) {
+  width: 495px;
+  }
+}
+
+.lock {
+  position: relative;
+  width: 291px;
+
+@media screen and (min-width: 768px) {
+  width: 495px;
+}
+}
+
+.password-img,
+.mail{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 24px;
+  top: 14px;
+
+  @media screen and (min-width: 768px){ 
+  right: 32px;
+  top: 17px;
+  width: 28px;
+  height: 28px;
+}
+}
+
+
+.close {
+  width: 20px;
+  height: 20px;
+
+  @media screen and (min-width: 768px) {
+    width: 28px;
+  height: 28px;
+  }
+}
+
+.close.dark,
+.mail.dark,
+.password-img.dark{
+  fill:#F6F6F6;
+}
+
+

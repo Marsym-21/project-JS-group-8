@@ -5,4 +5,6 @@ import './js/render-hp-all-categories.js';
 import './js/header-mobile.js';
 import './js/toggle-theme.js';
 // import './js/support.js';
+import './js/autorisation';
+import './js/refs';
 
