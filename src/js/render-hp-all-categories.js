@@ -3,6 +3,11 @@ import { renderCategoryPage } from './render-hp-default-markup.js';
 import { createCategoryString } from './getCategoryString.js';
 import { createFirstPartTitle } from './getCategoryTitle.js';
 import { createLastPartTitle } from './getCategoryTitle.js';
+import { spinnerPlay, spinnerStop } from './spinner.js';
+spinnerPlay();
+window.addEventListener('load', () => {
+  spinnerStop();
+});
 
 const booksInform = new getBookData();
 const list = document.querySelector('.book-categories');
@@ -33,6 +38,7 @@ export function renderCategoryList() {
 list.addEventListener('click', getString);
 
 function getString(e) {
+  spinnerPlay();
   e.preventDefault();
   console.log(e.target.classList.contains('all'));
   categoryList.innerHTML = '';
@@ -91,4 +97,5 @@ function getString(e) {
     .catch(error => {
       console.log(error);
     });
+  spinnerStop();
 }
