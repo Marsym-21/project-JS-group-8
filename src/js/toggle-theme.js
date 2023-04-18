@@ -10,6 +10,12 @@ export function getObject() {
     header: document.querySelector('.header_btn__shopping'),
     seeMoreBtn: document.querySelector('.btn-see-more'),
   };
+
+  const checkbox = document.getElementById('theme-checkbox');
+  if (localStorage.getItem('theme') === 'dark') {
+    checkbox.checked = true;
+    ref.body.classList.add('dark');
+  }
   console.log(ref);
 
   const object = Object.keys(ref);
