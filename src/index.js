@@ -5,3 +5,4 @@ import './js/render-hp-all-categories.js';
 // import './js/toggle-theme.js';
 // import './js/support.js';
 // import './js/mobile-menu.js';
+import './js/spinner.js';
