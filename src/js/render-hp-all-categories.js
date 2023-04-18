@@ -46,7 +46,7 @@ function getString(e) {
 
   let categoryArray = [];
   const booksInform = new getBookData(
-    (id = 0),
+    // (id = 0),
     (category = `${categoryString}`)
   );
   booksInform
