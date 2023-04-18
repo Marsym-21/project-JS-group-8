@@ -2,6 +2,7 @@ import { getBookData } from './getBooksData.js';
 import { renderCategoryList } from './render-hp-all-categories.js';
 import { seeMorebtn } from './seeMoreBtn.js';
 import { getObject } from './toggle-theme.js';
+import { renderModalWindow } from './modalWindow.js';
 import { spinnerPlay, spinnerStop } from './spinner.js';
 spinnerPlay();
 window.addEventListener('load', () => {
@@ -64,6 +65,10 @@ export function renderCategoryPage() {
       renderCategoryList();
       seeMorebtn();
       getObject();
+      const wrapFunction = document.querySelectorAll('.item-wrap');
+      wrapFunction.forEach(element => {
+        element.addEventListener('click', renderModalWindow);
+      });
     })
     .catch(error => {
       console.log(error);

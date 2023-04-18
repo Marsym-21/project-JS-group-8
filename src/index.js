@@ -6,6 +6,7 @@ import './js/render-hp-all-categories.js';
 import './js/spinner.js';
 import './js/header-mobile.js';
 import './js/toggle-theme.js';
+import './js/modalWindow.js';
 
 let arr = [
   '643282b2e85766588626a144',
