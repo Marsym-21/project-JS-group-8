@@ -2,6 +2,11 @@ import { createCategoryString } from './getCategoryString';
 import { getBookData } from './getBooksData';
 import { createFirstPartTitle } from './getCategoryTitle.js';
 import { createLastPartTitle } from './getCategoryTitle.js';
+import { spinnerPlay, spinnerStop } from './spinner.js';
+spinnerPlay();
+window.addEventListener('load', () => {
+  spinnerStop();
+});
 
 const categoryList = document.querySelector('.categories-list');
 
@@ -14,6 +19,7 @@ export function seeMorebtn() {
   });
 
   function renderCategory(e) {
+    spinnerPlay();
     e.preventDefault();
 
     categoryList.innerHTML = '';
@@ -60,5 +66,6 @@ export function seeMorebtn() {
       .catch(error => {
         console.log(error);
       });
+    spinnerStop();
   }
 }

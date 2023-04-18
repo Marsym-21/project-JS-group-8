@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <script type="module" src="./index.js"></script>
+    <script type="module" src="./shopping-list.js"></script>
   </head>
 
   <body>
@@ -22,7 +22,25 @@
 
     <main>
       <include src="./partials/spinner.html"></include>
+      
+    <script type="module" src="shopping-list.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <include src="./partials/header.html"></include>
+    </header>
+
+    <main>
+      <div class="container_shopping-list container">
       <include src="./partials/support.html"></include>
+        <div class="shoppingList-info">
+        <h1 class="shopingList_title">Shopping <span class="shopingList_title--color">List</span></h1>
+      
+        <ul class="shopingList"></ul>
+      </div>
+      </div>
+      
     </main>
   </body>
 </html>

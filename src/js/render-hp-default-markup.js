@@ -1,9 +1,8 @@
 import { getBookData } from './getBooksData.js';
 import { renderCategoryList } from './render-hp-all-categories.js';
 import { seeMorebtn } from './seeMoreBtn.js';
-import { spinnerPlay, spinnerStop } from './spinner.js';
 import { getObject } from './toggle-theme.js';
-const shopingListEl = document.querySelector('.shopingList');
+import { spinnerPlay, spinnerStop } from './spinner.js';
 spinnerPlay();
 window.addEventListener('load', () => {
   spinnerStop();
@@ -18,6 +17,7 @@ const imgAttributeAlt = 'book cover photo';
 const categoryList = document.querySelector('.categories-list');
 
 export function renderCategoryPage() {
+  spinnerPlay();
   // Get reference to the ul element using its id
   firstSpanMainTitle.textContent = 'Best Sellers';
   secondSpanMainTitle.textContent = 'Books';
@@ -60,6 +60,7 @@ export function renderCategoryPage() {
 
       const categoryHtml = categoryArray.join(''); // Join the array of HTML strings into a single string
       categoryList.insertAdjacentHTML('beforeend', categoryHtml); // Insert the HTML code into the ul element
+
       renderCategoryList();
       seeMorebtn();
       getObject();
@@ -67,6 +68,7 @@ export function renderCategoryPage() {
     .catch(error => {
       console.log(error);
     });
+  spinnerStop();
 }
 
 renderCategoryPage();
