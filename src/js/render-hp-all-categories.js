@@ -1,15 +1,10 @@
 import { getBookData } from './getBooksData.js';
+import { renderCategoryPage } from './render-hp-default-markup.js';
 import { createCategoryString } from './getCategoryString.js';
-// import {
-//   createFirstPartTitle,
-//   createLastPartTitle,
-// } from './getCategoryTitle.js';
+import { createFirstPartTitle } from './getCategoryTitle.js';
+import { createLastPartTitle } from './getCategoryTitle.js';
 
 const booksInform = new getBookData();
-
-// reset content of <section class="categories" id="categories">
-const defaultMainTitleName = document.querySelector('.default__main-title');
-// console.log(defaultMainTitleName);
 
 export function renderCategoryList() {
   let categoryArray = [];
@@ -28,11 +23,15 @@ export function renderCategoryList() {
 
 const list = document.querySelector('.book-categories');
 const categoryList = document.querySelector('.categories-list');
+const categoryAll = document.querySelector('.all');
+categoryAll.addEventListener('click', renderCategoryPage);
 list.addEventListener('click', getString);
 
 function getString(e) {
   e.preventDefault();
+  console.log(e.target.classList.contains('all'));
   categoryList.innerHTML = '';
+
   const data = e.target.innerHTML;
 
   // Добавляем класс "active" к нажатому элементу списка
@@ -69,24 +68,20 @@ function getString(e) {
 
       categoryList.insertAdjacentHTML('beforeend', categoryArray);
 
-      const title = document.createElement('h1');
-      const lastWord = document.createElement('span');
+      const firstSpanMainTitle = document.querySelector(
+        '.main-title__first-part'
+      );
+      const secondSpanMainTitle = document.querySelector(
+        '.main-title__second-part'
+      );
 
-      const wordsArray = data.split(' ');
-      const lastWordText = wordsArray.pop();
-
-      title.classList.add('category-title');
-      lastWord.classList.add('last-word');
-      lastWord.style.color = '#4F2EE8';
-
-      title.appendChild(document.createTextNode(wordsArray.join(' ')));
-      lastWord.appendChild(document.createTextNode(` ${lastWordText}`)); // добавляем пробел перед последним словом
-
-      title.appendChild(lastWord);
-
-      categoryList.innerHTML = `<div class="books_collection">${title.outerHTML}
-            <ul class="books_list">${categoryArray}</ul>
-        </div>`;
+      if (e.target.classList.contains('all')) {
+        firstSpanMainTitle.textContent = 'Best Sellers';
+        secondSpanMainTitle.textContent = 'Books';
+      } else {
+        firstSpanMainTitle.textContent = createFirstPartTitle(data);
+        secondSpanMainTitle.textContent = createLastPartTitle(data);
+      }
     })
     .catch(error => {
       console.log(error);

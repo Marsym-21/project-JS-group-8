@@ -1,32 +1,23 @@
 import { getBookData } from './getBooksData.js';
 import { renderCategoryList } from './render-hp-all-categories.js';
-
-// import { getString } from './render-hp-all-categories.js';
+import { seeMorebtn } from './seeMoreBtn.js';
 
 const booksInform = new getBookData();
+const firstSpanMainTitle = document.querySelector('.main-title__first-part');
+const secondSpanMainTitle = document.querySelector('.main-title__second-part');
 
-const firstSpanMainTitle = document.createElement('span');
-firstSpanMainTitle.textContent = 'Best Sellers';
-firstSpanMainTitle.classList.add('main-title__first-part');
-const secondSpanMainTitle = document.createElement('span');
-secondSpanMainTitle.textContent = ' Books';
-secondSpanMainTitle.classList.add('main-title__second-part');
 const imgAttributeAlt = 'book cover photo';
-const sectionCategory = document.querySelector('.categories');
+
 const categoryList = document.querySelector('.categories-list');
 
-function renderCategoryPage() {
+export function renderCategoryPage() {
   // Get reference to the ul element using its id
+  firstSpanMainTitle.textContent = 'Best Sellers';
+  secondSpanMainTitle.textContent = 'Books';
   let categoryArray = [];
   booksInform
     .getPromTopBooks()
     .then(books => {
-      const mainTitleName = document.createElement('h1');
-      mainTitleName.classList.add('default__main-title');
-      console.log(mainTitleName);
-      sectionCategory.prepend(mainTitleName);
-      mainTitleName.prepend(firstSpanMainTitle, secondSpanMainTitle);
-
       categoryArray = books.slice(0, 4).map(book => {
         const booksArray = book.books
           .map(
@@ -55,7 +46,7 @@ function renderCategoryPage() {
                  <div class="categories-list__wrap">
                    <h2 class="category">${book.list_name}</h2>
                    <ul class="books-list">${booksArray}</ul>
-                   <button class="btn-see-more" type="button">see more</button>
+                   <button class="btn-see-more" id="${book.list_name}" type="button">see more</button>
                  </div>
                 </li>`;
       });
@@ -63,6 +54,7 @@ function renderCategoryPage() {
       const categoryHtml = categoryArray.join(''); // Join the array of HTML strings into a single string
       categoryList.insertAdjacentHTML('beforeend', categoryHtml); // Insert the HTML code into the ul element
       renderCategoryList();
+      seeMorebtn();
     })
     .catch(error => {
       console.log(error);
@@ -70,10 +62,3 @@ function renderCategoryPage() {
 }
 
 renderCategoryPage();
-
-// function resetContent() {
-//   sectionCategory.innerHTML => getString(e);
-// }
-
-// const button = document.querySelector('.btn-see-more');
-// button.addEventListener('click', getString);
