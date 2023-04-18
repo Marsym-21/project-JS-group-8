@@ -45,10 +45,7 @@ function getString(e) {
   const categoryString = createCategoryString(`${data}`);
 
   let categoryArray = [];
-  const booksInform = new getBookData(
-    // (id = 0),
-    (category = `${categoryString}`)
-  );
+  const booksInform = new getBookData(0, categoryString);
   booksInform
     .getPromCategory()
     .then(books => {
