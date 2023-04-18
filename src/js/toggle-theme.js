@@ -8,6 +8,15 @@ export function getObject() {
   const ref = {
     body: document.querySelector('body'),
     header: document.querySelector('.header_btn__shopping'),
+    newElem: document.querySelector('.btn-see-more'),
+    headerHome: document.querySelector('.header_btn__shopping'),
+    headerBody: document.querySelector('.header'),
+    headerBtnActive: document.querySelector('.current_btn'),
+    headerBtnToogle: document.querySelector('.menu-togle-svg'),
+    headerMenuContainer: document.querySelector('.menu-container'),
+    headerLock: document.querySelector('.header_link__lock'),
+    headerUser: document.querySelector('.header_user_name'),
+    headerLogoBook: document.querySelector('.header_logo_book'),
     seeMoreBtn: document.querySelector('.btn-see-more'),
   };
 
