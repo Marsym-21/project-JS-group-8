@@ -4,15 +4,13 @@ import { renderCategoryList } from './render-hp-all-categories.js';
 // import { getString } from './render-hp-all-categories.js';
 
 const booksInform = new getBookData();
-
-const firstSpanMainTitle = document.createElement('span');
+const firstSpanMainTitle = document.querySelector('.main-title__first-part');
+const secondSpanMainTitle = document.querySelector('.main-title__second-part');
 firstSpanMainTitle.textContent = 'Best Sellers';
-firstSpanMainTitle.classList.add('main-title__first-part');
-const secondSpanMainTitle = document.createElement('span');
-secondSpanMainTitle.textContent = ' Books';
-secondSpanMainTitle.classList.add('main-title__second-part');
+secondSpanMainTitle.textContent = 'Books';
+
 const imgAttributeAlt = 'book cover photo';
-const sectionCategory = document.querySelector('.categories');
+
 const categoryList = document.querySelector('.categories-list');
 
 function renderCategoryPage() {
@@ -21,12 +19,6 @@ function renderCategoryPage() {
   booksInform
     .getPromTopBooks()
     .then(books => {
-      const mainTitleName = document.createElement('h1');
-      mainTitleName.classList.add('default__main-title');
-      console.log(mainTitleName);
-      sectionCategory.prepend(mainTitleName);
-      mainTitleName.prepend(firstSpanMainTitle, secondSpanMainTitle);
-
       categoryArray = books.slice(0, 4).map(book => {
         const booksArray = book.books
           .map(

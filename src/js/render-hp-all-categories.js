@@ -1,15 +1,9 @@
 import { getBookData } from './getBooksData.js';
 import { createCategoryString } from './getCategoryString.js';
-// import {
-//   createFirstPartTitle,
-//   createLastPartTitle,
-// } from './getCategoryTitle.js';
+import { createFirstPartTitle } from './getCategoryTitle.js';
+import { createLastPartTitle } from './getCategoryTitle.js';
 
 const booksInform = new getBookData();
-
-// reset content of <section class="categories" id="categories">
-const defaultMainTitleName = document.querySelector('.default__main-title');
-// console.log(defaultMainTitleName);
 
 export function renderCategoryList() {
   let categoryArray = [];
@@ -28,6 +22,7 @@ export function renderCategoryList() {
 
 const list = document.querySelector('.book-categories');
 const categoryList = document.querySelector('.categories-list');
+
 list.addEventListener('click', getString);
 
 function getString(e) {
@@ -69,24 +64,31 @@ function getString(e) {
 
       categoryList.insertAdjacentHTML('beforeend', categoryArray);
 
-      const title = document.createElement('h1');
-      const lastWord = document.createElement('span');
+      const firstSpanMainTitle = document.querySelector(
+        '.main-title__first-part'
+      );
+      const secondSpanMainTitle = document.querySelector(
+        '.main-title__second-part'
+      );
 
-      const wordsArray = data.split(' ');
-      const lastWordText = wordsArray.pop();
+      firstSpanMainTitle.textContent = createFirstPartTitle(data);
+      secondSpanMainTitle.textContent = createLastPartTitle(data);
 
-      title.classList.add('category-title');
-      lastWord.classList.add('last-word');
-      lastWord.style.color = '#4F2EE8';
+      // const wordsArray = data.split(' ');
+      // const lastWordText = wordsArray.pop();
 
-      title.appendChild(document.createTextNode(wordsArray.join(' ')));
-      lastWord.appendChild(document.createTextNode(` ${lastWordText}`)); // добавляем пробел перед последним словом
+      // title.classList.add('category-title');
+      // lastWord.classList.add('last-word');
+      // lastWord.style.color = '#4F2EE8';
 
-      title.appendChild(lastWord);
+      // title.appendChild(document.createTextNode(wordsArray.join(' ')));
+      // lastWord.appendChild(document.createTextNode(` ${lastWordText}`)); // добавляем пробел перед последним словом
 
-      categoryList.innerHTML = `<div class="books_collection">${title.outerHTML}
-            <ul class="books_list">${categoryArray}</ul>
-        </div>`;
+      // title.appendChild(lastWord);
+
+      // categoryList.innerHTML = `<div class="books_collection">${title.outerHTML}
+      //       <ul class="books_list">${categoryArray}</ul>
+      //   </div>`;
     })
     .catch(error => {
       console.log(error);
