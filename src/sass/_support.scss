@@ -63,16 +63,6 @@ display: flex;
     }
 }
 
-// .support-thumb .swiper {
-//     margin-left: 40px;
-    
-// }
-
-// .swiper,
-// swiper-container {
-//     margin-left: 40px;
-// }
-
 .support-list {
     // width: 310px;
     // height: 150px;
@@ -97,7 +87,7 @@ font-size: 14px;
 line-height: 1.29;
 }
 
-.support-button-next, .support-button-prev {
+.support-button-next {
     margin-left: auto;
     margin-right: auto;
     width: 32px;    
@@ -114,10 +104,15 @@ line-height: 1.29;
         height: 38px;
     }
 }
-
-.is-hidden {
-    display: none;
+.support-icon {
+    width: 12px;
+    height: 6px;
+    @media screen and (min-width: 768px) {
+        width: 13px;
+        height: 7px;
+    }
 }
+
 .support-link {
     display: flex;
     align-items: center;
