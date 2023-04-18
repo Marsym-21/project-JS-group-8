@@ -38,10 +38,12 @@ const slider = tns({
   rewind: true,
   gutter: 20,
   edgePadding: 5,
+  speed: 500,
   responsive: {
     768: {
       items: 6,
       slideBy: 1,
+      speed: 300,
     },
   },
   // autoHeight: true,
