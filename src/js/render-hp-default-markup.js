@@ -1,7 +1,13 @@
 import { getBookData } from './getBooksData.js';
 import { renderCategoryList } from './render-hp-all-categories.js';
 import { seeMorebtn } from './seeMoreBtn.js';
+import { spinnerPlay, spinnerStop } from './spinner.js';
 import { getObject } from './toggle-theme.js';
+const shopingListEl = document.querySelector('.shopingList');
+spinnerPlay();
+window.addEventListener('load', () => {
+  spinnerStop();
+});
 
 const booksInform = new getBookData();
 const firstSpanMainTitle = document.querySelector('.main-title__first-part');
