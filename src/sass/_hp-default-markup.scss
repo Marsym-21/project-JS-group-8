@@ -1,0 +1,192 @@
+
+// ------------------------------------
+// /* main title Best Sellers Books */
+// ------------------------------------
+.default__main-title {
+  position: absolute;
+// width: 389px;
+// height: 52px;
+  left: 420px;
+  top: 112px;
+  
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.1;
+
+/* identical to box height, or 108% */
+  letter-spacing: -0.04em;
+// color: #111111;
+// position: absolute;
+// top: 0;
+// right: 0;
+}
+
+.main-title__first-part {
+  color: #111111;
+}
+
+.main-title__second-part {
+  color: #4F2EE8;
+}
+
+// --------------------------
+// /* main section-blocks */
+// --------------------------
+.categories {
+
+/* Auto layout */
+  display: flex;
+// flex-direction: column;
+// align-items: flex-end;
+  padding-top: 132px;
+// padding-left: 40px;
+// gap: 32px;
+  
+// position: absolute;
+// width: 996px;
+// height: 426px;
+// left: 420px;
+// top: 204px;
+}
+
+.categories-list__wrap {
+  outline: 2px solid red;
+  outline-offset: -2px;
+  margin-bottom: 40px;
+}
+
+// --------------------------
+// /* category-blocks */
+// --------------------------
+.category {
+  outline: 2px solid red;
+  outline-offset: -2px;
+  margin-bottom: 18px;
+}
+
+// .categories-list__item {}
+
+/* blocks */
+// .categories-list__wrap {
+/* Auto layout */
+// display: flex;
+// flex-direction: column;
+// align-items: flex-start;
+// padding: 0px;
+// gap: 18px;
+  
+// width: 996px;
+// height: 348px;
+  
+/* Inside auto layout */
+// flex: none;
+// order: 0;
+// flex-grow: 0;
+// }
+
+.books-list {
+
+  outline: 2px solid red;
+  outline-offset: -2px;
+
+  padding: 0;
+  // max-width: 1200px;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  // padding-top: 50px;
+}
+
+// ----------
+// /* card */
+// ----------
+.item-wrap {
+  outline: 2px solid red;
+  outline-offset: -2px;
+  
+/* Auto layout */
+// display: flex;
+// flex-direction: column;
+// align-items: flex-start;
+// padding: 0px;
+// gap: 14px;
+  
+// width: 180px;
+// height: 306px;
+  
+/* Inside auto layout */
+// flex: none;
+// order: 0;
+// flex-grow: 0;
+}
+
+.item-img__wrap {
+  outline: 2px solid red;
+  outline-offset: -2px;
+
+  min-width: 180px;
+  min-height: 256px;
+}
+
+.item-img {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 8px;
+  // object-fit: cover
+}
+
+
+.item__name {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #111111;
+}
+
+.item__author {
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.04em;
+  color: #B4AFAF;
+}
+
+
+// ----------
+// /* btn */
+// ----------
+.btn-see-more {
+
+//   outline: 2px solid red;
+//   outline-offset: -2px;
+  // box-sizing: border-box;
+  
+  /* Auto layout */
+  // display: flex;
+  // flex-direction: row;
+  // align-items: flex-start;
+  // margin-top: 32px;
+  // padding: 14px 28px;
+  // gap: 10px;
+  
+  width: 124px;
+  height: 46px;
+  
+  border: 2px solid #4F2EE8;
+  border-radius: 40px;
+  
+  /* Inside auto layout */
+  // flex: none;
+  // order: 1;
+  // flex-grow: 0;
+
+}
