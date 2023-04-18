@@ -88,8 +88,7 @@
   line-height: 1.29;
 }
 
-.support-button-next,
-.support-button-prev {
+.support-button-next {
   margin-left: auto;
   margin-right: auto;
   width: 32px;
@@ -109,15 +108,21 @@
   border-radius: 50%;
 }
 @media screen and (min-width: 768px) {
-  .support-button-next,
-  .support-button-prev {
+  .support-button-next {
     width: 38px;
     height: 38px;
   }
 }
 
-.is-hidden {
-  display: none;
+.support-icon {
+  width: 12px;
+  height: 6px;
+}
+@media screen and (min-width: 768px) {
+  .support-icon {
+    width: 13px;
+    height: 7px;
+  }
 }
 
 .support-link {
@@ -378,6 +383,25 @@ img {
   margin-bottom: auto;
 }
 
+.header_logo_book {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  fill: currentColor;
+}
+
+.header_logo_book.dark {
+  fill: currentColor;
+  stroke: var(--header-black-text-svg-color);
+}
+
 .header_item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -397,7 +421,7 @@ img {
 }
 @media screen and (min-width: 1200px) {
   .header_item {
-    margin-right: 770px;
+    margin-right: 746px;
   }
 }
 
@@ -419,6 +443,25 @@ img {
   background-color: var(--header-black-text-svg-color);
   border: none;
   cursor: pointer;
+}
+
+.header_btn__shopping:active {
+  background-color: var(--header-left-btn-focus-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2857142857;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 8px 16px;
+  border-radius: 36px;
+  border: none;
 }
 
 .header_btn__shopping.dark {
@@ -451,6 +494,25 @@ img {
   background-color: var(--body-white-firsttitle-color);
 }
 
+.header_btn__home:active {
+  background-color: var(--header-left-btn-focus-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2857142857;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 8px 16px;
+  border-radius: 36px;
+  border: none;
+}
+
 .current_btn {
   background-color: var(--header-left-btn-focus-color);
   font-weight: 700;
@@ -476,7 +538,7 @@ img {
 }
 
 .header_nav {
-  margin-left: 99px;
+  margin-left: 185px;
   padding-left: 0;
 }
 
@@ -571,7 +633,7 @@ img {
 }
 
 .header_user_name.dark {
-  color: var(--header-white-background-color);
+  color: var(--header-black-background-color);
 }
 
 .header_personal {
