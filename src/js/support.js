@@ -33,6 +33,7 @@ const slider = tns({
   axis: 'vertical',
   controls: false,
   nav: false,
+  touch: false,
   items: 4,
   slideBy: 2,
   rewind: true,
