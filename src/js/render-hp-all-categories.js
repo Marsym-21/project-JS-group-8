@@ -5,8 +5,15 @@ import { createFirstPartTitle } from './getCategoryTitle.js';
 import { createLastPartTitle } from './getCategoryTitle.js';
 
 const booksInform = new getBookData();
+const list = document.querySelector('.book-categories');
+const categoryList = document.querySelector('.categories-list');
 
 export function renderCategoryList() {
+  const allCategor = document.createElement('li');
+  allCategor.classList.add('category-link');
+  allCategor.classList.add('all');
+  allCategor.textContent = 'All Categories';
+  list.append(allCategor);
   let categoryArray = [];
   booksInform
     .getPromCategoryList()
@@ -15,16 +22,14 @@ export function renderCategoryList() {
         .map(book => `<li class="category-link">${book.list_name}</li>`)
         .join('');
       list.insertAdjacentHTML('beforeend', categoryArray);
+      const categoryAll = document.querySelector('.all');
+      categoryAll.addEventListener('click', renderCategoryPage);
     })
     .catch(error => {
       console.log(error);
     });
 }
 
-const list = document.querySelector('.book-categories');
-const categoryList = document.querySelector('.categories-list');
-const categoryAll = document.querySelector('.all');
-categoryAll.addEventListener('click', renderCategoryPage);
 list.addEventListener('click', getString);
 
 function getString(e) {
@@ -82,13 +87,6 @@ function getString(e) {
         firstSpanMainTitle.textContent = createFirstPartTitle(data);
         secondSpanMainTitle.textContent = createLastPartTitle(data);
       }
-      const block = document.querySelector('.book-block');
-
-      // block.scroll({
-      //   top: 100,
-      //   left: 100,
-      //   behavior: 'smooth',
-      // });
     })
     .catch(error => {
       console.log(error);

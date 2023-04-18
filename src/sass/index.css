@@ -267,21 +267,6 @@ img {
   }
 }
 
-.book-block {
-  max-height: 472px;
-  overflow-y: scroll;
-}
-
-.book-block::-webkit-scrollbar {
-  width: 8px;
-  background-color: var(--body-white-background-color);
-}
-
-.book-block::-webkit-scrollbar-thumb {
-  background: #e0e0e0;
-  border-radius: 12px;
-}
-
 .header {
   width: 100%;
   height: 72px;
@@ -963,6 +948,21 @@ img {
   color: #111111;
   margin-bottom: 40px;
 }
+.book-block {
+  max-height: 472px;
+  overflow-y: scroll;
+}
+
+.book-block::-webkit-scrollbar {
+  width: 8px;
+  background-color: var(--body-white-background-color);
+}
+
+.book-block::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 12px;
+}
+
 .default__main-title {
   left: 420px;
   top: 112px;
