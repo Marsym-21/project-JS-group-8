@@ -1,7 +1,6 @@
 import { getBookData } from './getBooksData.js';
 import { renderCategoryList } from './render-hp-all-categories.js';
-
-// import { getString } from './render-hp-all-categories.js';
+import { seeMorebtn } from './seeMoreBtn.js';
 
 const booksInform = new getBookData();
 const firstSpanMainTitle = document.querySelector('.main-title__first-part');
@@ -47,7 +46,7 @@ export function renderCategoryPage() {
                  <div class="categories-list__wrap">
                    <h2 class="category">${book.list_name}</h2>
                    <ul class="books-list">${booksArray}</ul>
-                   <button class="btn-see-more" type="button">see more</button>
+                   <button class="btn-see-more" id="${book.list_name}" type="button">see more</button>
                  </div>
                 </li>`;
       });
@@ -55,6 +54,7 @@ export function renderCategoryPage() {
       const categoryHtml = categoryArray.join(''); // Join the array of HTML strings into a single string
       categoryList.insertAdjacentHTML('beforeend', categoryHtml); // Insert the HTML code into the ul element
       renderCategoryList();
+      seeMorebtn();
     })
     .catch(error => {
       console.log(error);
@@ -62,10 +62,3 @@ export function renderCategoryPage() {
 }
 
 renderCategoryPage();
-
-// function resetContent() {
-//   sectionCategory.innerHTML => getString(e);
-// }
-
-// const button = document.querySelector('.btn-see-more');
-// button.addEventListener('click', getString);

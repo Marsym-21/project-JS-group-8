@@ -82,22 +82,6 @@ function getString(e) {
         firstSpanMainTitle.textContent = createFirstPartTitle(data);
         secondSpanMainTitle.textContent = createLastPartTitle(data);
       }
-
-      // const wordsArray = data.split(' ');
-      // const lastWordText = wordsArray.pop();
-
-      // title.classList.add('category-title');
-      // lastWord.classList.add('last-word');
-      // lastWord.style.color = '#4F2EE8';
-
-      // title.appendChild(document.createTextNode(wordsArray.join(' ')));
-      // lastWord.appendChild(document.createTextNode(` ${lastWordText}`)); // добавляем пробел перед последним словом
-
-      // title.appendChild(lastWord);
-
-      // categoryList.innerHTML = `<div class="books_collection">${title.outerHTML}
-      //       <ul class="books_list">${categoryArray}</ul>
-      //   </div>`;
     })
     .catch(error => {
       console.log(error);
