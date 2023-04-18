@@ -6,7 +6,6 @@ import { createLastPartTitle } from './getCategoryTitle.js';
 const categoryList = document.querySelector('.categories-list');
 export function seeMorebtn() {
   const sMoreButton = document.querySelectorAll('.btn-see-more');
-  console.log(sMoreButton);
 
   sMoreButton.forEach(element => {
     element.addEventListener('click', renderCategory);

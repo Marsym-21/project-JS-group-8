@@ -1,6 +1,7 @@
 import { getBookData } from './getBooksData.js';
 import { renderCategoryList } from './render-hp-all-categories.js';
 import { seeMorebtn } from './seeMoreBtn.js';
+import { getObject } from './toggle-theme.js';
 
 const booksInform = new getBookData();
 const firstSpanMainTitle = document.querySelector('.main-title__first-part');
@@ -55,6 +56,7 @@ export function renderCategoryPage() {
       categoryList.insertAdjacentHTML('beforeend', categoryHtml); // Insert the HTML code into the ul element
       renderCategoryList();
       seeMorebtn();
+      getObject();
     })
     .catch(error => {
       console.log(error);
