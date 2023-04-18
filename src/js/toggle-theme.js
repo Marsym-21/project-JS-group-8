@@ -8,7 +8,7 @@ export function getObject() {
   const ref = {
     body: document.querySelector('body'),
     header: document.querySelector('.header_btn__shopping'),
-    newElem: document.querySelector('.btn-see-more'),
+    seeMoreBtn: document.querySelector('.btn-see-more'),
   };
   console.log(ref);
 

@@ -121,3 +121,18 @@ img {
     padding-right: 24px;
   }
 }
+
+.book-block {
+  max-height: 472px;
+  overflow-y: scroll;
+}
+
+.book-block::-webkit-scrollbar {
+  width: 8px;
+  background-color: var(--body-white-background-color);
+}
+
+.book-block::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 12px;
+}
