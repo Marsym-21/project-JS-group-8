@@ -1,4 +1,3 @@
-
 .books_list {
   display: flex;
   flex-wrap: wrap;
@@ -47,7 +46,7 @@
   font-size: 12px;
   line-height: 14px;
   letter-spacing: -0.04em;
-  color: #B4AFAF;
+  color: #b4afaf;
 }
 
 .book-block {
@@ -56,7 +55,7 @@
   align-items: flex-start;
   padding: 0px;
   gap: 20px;
-  background: #D0D0D0;
+  background-color: var(--body-white-background-color);
 }
 
 .category-link {
@@ -72,7 +71,6 @@
     letter-spacing: -0.02em;
     color: rgba(17, 17, 17, 0.6);
   }
-
 }
 
 .category-link:not(:last-child) {
@@ -80,7 +78,6 @@
 }
 
 .category-link {
-
   &:hover,
   &:focus,
   &.active {
@@ -90,7 +87,7 @@
       font-weight: 700;
       font-size: 18px;
       text-transform: uppercase;
-      color: #4F2EE8;
+      color: #4f2ee8;
     }
   }
 }
@@ -100,7 +97,7 @@
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
-
+  background-color: var(--body-white-background-color);
   @media screen and (min-width: 1440px) {
     display: flex;
     align-items: baseline;
@@ -126,5 +123,21 @@
   color: #111111;
   margin-bottom: 40px;
 
-  @media screen and (min-width: 1440px) {}
+  @media screen and (min-width: 1440px) {
+  }
+}
+.book-block {
+  max-height: 472px;
+  overflow-y: scroll;
+}
+
+.book-block::-webkit-scrollbar {
+  width: 8px;
+
+  background-color: var(--body-white-background-color);
+}
+
+.book-block::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 12px;
 }

@@ -2,6 +2,7 @@ import { getBookData } from './getBooksData.js';
 import { renderCategoryList } from './render-hp-all-categories.js';
 import { seeMorebtn } from './seeMoreBtn.js';
 import { spinnerPlay, spinnerStop } from './spinner.js';
+import { getObject } from './toggle-theme.js';
 const shopingListEl = document.querySelector('.shopingList');
 spinnerPlay();
 window.addEventListener('load', () => {
@@ -28,8 +29,8 @@ export function renderCategoryPage() {
         const booksArray = book.books
           .map(
             data =>
-              `<li class="books-list__item" data-id="${data._id}">
-            <div class="item-wrap">
+              `<li class="books-list__item">
+            <div class="item-wrap" id="${data._id}">
              <div class = "item-img__wrap">
                <img class="item-img"
                 src="${data.book_image}" 
@@ -61,6 +62,7 @@ export function renderCategoryPage() {
       categoryList.insertAdjacentHTML('beforeend', categoryHtml); // Insert the HTML code into the ul element
       renderCategoryList();
       seeMorebtn();
+      getObject();
     })
     .catch(error => {
       console.log(error);

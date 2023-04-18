@@ -4,6 +4,7 @@ import { createFirstPartTitle } from './getCategoryTitle.js';
 import { createLastPartTitle } from './getCategoryTitle.js';
 
 const categoryList = document.querySelector('.categories-list');
+
 export function seeMorebtn() {
   const sMoreButton = document.querySelectorAll('.btn-see-more');
   console.log(sMoreButton);
