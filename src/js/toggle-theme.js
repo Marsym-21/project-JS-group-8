@@ -1,8 +1,14 @@
+const checkbox = document.getElementById('theme-checkbox');
+
+if (localStorage.getItem('theme') === 'dark') {
+  checkbox.checked = true;
+}
+
 export function getObject() {
   const ref = {
     body: document.querySelector('body'),
     header: document.querySelector('.header_btn__shopping'),
-    newElem: document.querySelector('.btn-see-more'),
+    seeMoreBtn: document.querySelector('.btn-see-more'),
   };
 
   const checkbox = document.getElementById('theme-checkbox');

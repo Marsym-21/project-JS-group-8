@@ -82,6 +82,13 @@ function getString(e) {
         firstSpanMainTitle.textContent = createFirstPartTitle(data);
         secondSpanMainTitle.textContent = createLastPartTitle(data);
       }
+      const block = document.querySelector('.book-block');
+
+      // block.scroll({
+      //   top: 100,
+      //   left: 100,
+      //   behavior: 'smooth',
+      // });
     })
     .catch(error => {
       console.log(error);
