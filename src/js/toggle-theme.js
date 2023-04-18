@@ -1,4 +1,5 @@
 const checkbox = document.getElementById('theme-checkbox');
+
 if (localStorage.getItem('theme') === 'dark') {
   checkbox.checked = true;
 }
