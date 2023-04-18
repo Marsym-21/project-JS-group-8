@@ -1,0 +1,36 @@
+.light {
+  background-color: var(--body-white-background-color);
+}
+
+.checkbox__div {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background: var(--background-toggle-light-theme);
+  border-radius: 50px;
+}
+
+.checkbox__input {
+  display: none;
+}
+
+.checkbox__input:checked ~ .checkbox__div {
+  background: var(--background-toggle-dark-theme);
+}
+
+.checkbox__input:checked ~ .checkbox__div::before {
+  left: 21px;
+}
+
+.checkbox__div::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gradient-toggle);
+  top: 1px;
+  left: 1px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}

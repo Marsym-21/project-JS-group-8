@@ -1,0 +1,106 @@
+<header class="header header_container">
+  <div class="header_main">
+    <div class="header_logo">
+      <img
+        src="./images/logo-black.png"
+        class="header_logo_icon"
+        width="53"
+        height="17"
+        alt="logo header"
+      />
+    </div>
+    <div class="nav">
+      <nav class="header_nav">
+        <ul class="header_item">
+          <li class="header_list">
+            <a href="./index.html">
+              <button class="current_btn header_btn__home">HOME</button></a
+            >
+          </li>
+          <li class="header_list">
+            <a href="./shopping-list.html">
+              <button class="header_btn__shopping white">
+                SHOPPING LIST
+              </button></a
+            >
+            <svg class="header_link__icon" width="13.5" height="16.5">
+              <use href="./images/project-icon.svg#icon-lock"></use>
+            </svg>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="header_personal">
+      <div class="checkbox__header">
+        <label class="checkbox__label">
+          <input type="checkbox" class="checkbox__input" id="theme-checkbox" />
+          <div class="checkbox__div"></div>
+        </label>
+      </div>
+
+      <div class="header_user">
+        <svg class="header_user__icon" width="37" height="37">
+          <use href="./images/project-icon.svg#icon-user"></use>
+        </svg>
+        <p class="header_user_name">Name</p>
+      </div>
+    </div>
+    <!-- Open menu -->
+    <div class="menu-header">
+      <button
+        class="menu-toggle js-open-menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg
+          class="menu-togle-svg"
+          width="24"
+          height="24"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use href="./images/project-icon.svg#icon-align-left"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+<!-- Mobile menu -->
+<div class="menu-container js-menu-container" id="mobile-menu">
+  <button class="menu-toggle js-close-menu">
+    <svg
+      class="menu-togle-svg"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+    >
+      <use href="./images/project-icon.svg#icon-x-close"></use>
+    </svg>
+  </button>
+
+  <ul class="mobile-menu">
+    <li class="header_list">
+      <button
+        class="header_btn__home current_btn"
+        type="submit"
+        onClick="location.href='../index.html'"
+      >
+        Home
+      </button>
+    </li>
+    <li class="header_list">
+      <button
+        class="header_btn__shopping white"
+        type="submit"
+        onClick="location.href='../shopping-list.html'"
+      >
+        Shopping list
+      </button>
+      <svg class="header_link__icon" width="13.33" height="16.67">
+        <use href="./images/project-icon.svg#icon-lock"></use>
+      </svg>
+    </li>
+  </ul>
+</div>
