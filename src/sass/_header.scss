@@ -3,15 +3,17 @@
   height: 72px;
   border: 1.5px solid var(--body-white-firsttitle-color);
   border-radius: 0px 0px 8px 8px;
-  position: sticky;
+  position: fixed;
   top: 0;
   margin-right: 0;
   margin-left: 0;
   justify-content: space-between;
-  z-index: 10;
+  z-index: 100;
+  background: var(--header-white-background-color);
 }
 .header.dark {
   border: 1.5px solid var(--body-white-background-color);
+  background: var(--header-black-background-color);
 }
 .header_container {
   margin-right: 0;
@@ -372,5 +374,9 @@
   transition-delay: 0ms;
 }
 .menu-togle-svg {
-  fill: var(--header-white-text-svg-color);
+  fill: var(--header-black-background-color);
+  stroke: var(--header-black-background-color);
+}
+.menu-togle-svg.dark {
+  fill: var(--header-black-text-svg-color);
 }
