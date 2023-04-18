@@ -1,0 +1,119 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: DM Sans;
+  background-color: var(--body-white-background-color);
+}
+
+body.dark {
+  background-color: var(--body-black-background-color);
+  color: var(--book-black-description-text-color);
+}
+
+ul,
+a {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+:root {
+  --body-white-background-color: #f6f6f6;
+  --body-white-firsttitle-color: #111111;
+  --body-white-secondtitle-color: #4f2ee8;
+  --body-black-background-color: #202024;
+  --body-black-firsttitle-color: #ffffff;
+  --header-white-background-color: #ffffff;
+  --header-white-text-svg-color: #111111;
+  --header-black-background-color: #111111;
+  --header-black-text-svg-color: #ffffff;
+  --header-left-btn-focus-color: #eac645;
+  --header-right-btn-color: #4f2ee8;
+  --header-right-btn-text-color: #ffffff;
+  --categoris-white-text-color: rgba(17, 17, 17, 0.6);
+  --categoris-white-focus-color: #4f2ee8;
+  --categoris-white-text-color: rgba(255, 255, 255, 0.6);
+  --categoris-black-focus-color: #eac645;
+  --bookslist-title-color: #b4afaf;
+  --books-white-title-color: #111111;
+  --books-text-color: #b4afaf;
+  --books-black-title-color: #ffffff;
+  --books-modal-btn: 2px solid #4f2ee8;
+  --books-modal-white-btn-text: #111111;
+  --books-modal-black-btn-text: #ffffff;
+  --books-modal-btn-hover-background-color: #4f2ee8;
+  --support-background: linear-gradient(#4f2ee8, #ffffff);
+  --support-text-color: #ffffff;
+  --book-white-description-text-color: #111111;
+  --book-black-description-text-color: #ffffff;
+  --book-dump-svg-color: #ffffff;
+  --book-dump-svg-background-color: #4f2ee8;
+  --logout-btn: 1.5px solid #111111;
+  --logout-btn-background-color: #ffffff;
+  --logout-btn-color-text: #111111;
+  --logout-btn-background-color-focus: #4f2ee8;
+  --logout-btn-color-text-focus: #ffffff;
+  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --font-style-bold: Bold;
+  --font-style-medium: Medium;
+  --font-style-regular: Regular;
+  --font-style-italic: Italic;
+  --background-toggle-light-theme: linear-gradient(
+    rgba(79, 46, 232, 1),
+    rgba(220, 220, 220, 1)
+  );
+  --background-toggle-dark-theme: linear-gradient(
+    rgba(79, 46, 232, 1),
+    rgba(104, 104, 104, 1)
+  );
+  --gradient-toggle: linear-gradient(
+    rgba(255, 255, 255, 1),
+    rgba(247, 247, 247, 1)
+  );
+}
+
+.is-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.container {
+  width: 375px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+
+  // tablet screen
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  // desktop screen
+  @media screen and (min-width: 1440px) {
+    width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
