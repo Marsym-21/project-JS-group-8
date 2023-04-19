@@ -3,13 +3,15 @@ const checkbox = document.getElementById('theme-checkbox');
 if (localStorage.getItem('theme') === 'dark') {
   checkbox.checked = true;
 }
+const body_list = document.querySelector('body_shoping_list');
+console.log(body_list);
 
 export function getObject() {
   const ref = {
     body: document.querySelector('body'),
-    body_list: document.querySelector('body_shoping_list'),
+    // body_list: document.querySelector('body_shoping_list'),
     header: document.querySelector('.header_btn__shopping'),
-    newElem: document.querySelector('.btn-see-more'),
+    // newElem: document.querySelector('.btn-see-more'),
     headerBody: document.querySelector('.header'),
     headerBtnActive: document.querySelector('.current_btn'),
     //headerShopActive: document.querySelector('.current_btn_shopping'),
@@ -21,10 +23,10 @@ export function getObject() {
     // headerMobileHome: document.querySelector('.header_mobile_home'),
     headerMobileCurrent: document.querySelector('.current_btn_mobile'),
     headerCloseSvg: document.querySelector('.menu-togle-close'),
-    seeMoreBtn: document.querySelector('.btn-see-more'),
-    bookBlockContainer: document.querySelector('.book-block'),
+    // seeMoreBtn: document.querySelector('.btn-see-more'),
+    // bookBlockContainer: document.querySelector('.book-block'),
   };
-  console.log(ref.body_list);
+
   const object = Object.keys(ref);
   console.log(object);
 

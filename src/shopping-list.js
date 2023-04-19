@@ -7,6 +7,8 @@ import './js/header-mobile.js';
 import './js/toggle-theme.js';
 import { getBookData } from '../src/js/getBooksData.js';
 import { spinnerPlay, spinnerStop } from './js/spinner.js';
+import { getObject } from './js/toggle-theme.js';
+
 spinnerPlay();
 window.addEventListener('load', () => {
   spinnerStop();
@@ -154,3 +156,5 @@ function deleteBook(event) {
     }
   }
 }
+
+getObject();
