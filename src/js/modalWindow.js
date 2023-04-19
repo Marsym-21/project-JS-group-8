@@ -162,7 +162,7 @@ export function renderBookInformation(id) {
         } else {
           booksArray.push(id);
           addButton.textContent = `${checkMessage()}`;
-          stringKey = JSON.stringify(booksArray);
+          const stringKey = JSON.stringify(booksArray);
           localStorage.setItem('id', stringKey);
         }
       });
