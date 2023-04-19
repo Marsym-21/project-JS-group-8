@@ -164,9 +164,9 @@ export function renderBookInformation(id) {
     });
 }
 
-function closeBtn() {
-  modalBackdrop.classList.add('is-hidden');
-}
+// function closeBtn() {
+//   modalBackdrop.classList.add('is-hidden');
+// }
 
 export function renderModalWindow(e) {
   const data = e.currentTarget.id;
