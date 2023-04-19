@@ -155,7 +155,7 @@ export function renderBookInformation(id) {
           let bookIndex = booksArray.indexOf(id);
 
           booksArray.splice(bookIndex, 1);
-          stringKey = JSON.stringify(booksArray);
+          const stringKey = JSON.stringify(booksArray);
           addButton.textContent = `${checkMessage()}`;
           localStorage.setItem('id', stringKey);
           return;
