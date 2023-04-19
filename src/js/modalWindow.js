@@ -22,14 +22,14 @@ export function checkLocalStorage() {
 }
 console.log(booksArray);
 
-function checkMessage() {
-  console.log(booksArray.includes(id));
-  if (booksArray.includes(id)) {
-    return (message = 'Remove from the shopping list');
-  } else {
-    return (message = 'Add to shopping list');
-  }
-}
+// function checkMessage() {
+//   console.log(booksArray.includes(id));
+//   if (booksArray.includes(id)) {
+//     return (message = 'Remove from the shopping list');
+//   } else {
+//     return (message = 'Add to shopping list');
+//   }
+// }
 
 function checkValue(value) {
   if (value !== '') {
@@ -131,7 +131,7 @@ export function renderBookInformation(id) {
        <div  class="modal-book__add__wrapper">  
        <button type="button" class="modal-book__button" id="${
          data.id
-       }">${checkMessage()}</button>  
+       }"></button>  
    </div>  
         `;
 
@@ -141,22 +141,23 @@ export function renderBookInformation(id) {
       closeButton.addEventListener('click', closeBtn);
 
       const addButton = document.querySelector('.modal-book__button');
-      addButton.addEventListener('click', () => {
-        if (booksArray.includes(id)) {
-          let bookIndex = booksArray.indexOf(id);
 
-          booksArray.splice(bookIndex, 1);
-          stringKey = JSON.stringify(booksArray);
-          addButton.textContent = `${checkMessage()}`;
-          localStorage.setItem('id', stringKey);
-          return;
-        } else {
-          booksArray.push(id);
-          addButton.textContent = `${checkMessage()}`;
-          stringKey = JSON.stringify(booksArray);
-          localStorage.setItem('id', stringKey);
-        }
-      });
+      // addButton.addEventListener('click', () => {
+      //   if (booksArray.includes(id)) {
+      //     let bookIndex = booksArray.indexOf(id);
+
+      //     booksArray.splice(bookIndex, 1);
+      //     stringKey = JSON.stringify(booksArray);
+      //     addButton.textContent = `${checkMessage()}`;
+      //     localStorage.setItem('id', stringKey);
+      //     return;
+      //   } else {
+      //     booksArray.push(id);
+      //     addButton.textContent = `${checkMessage()}`;
+      //     stringKey = JSON.stringify(booksArray);
+      //     localStorage.setItem('id', stringKey);
+      //   }
+      // });
     })
     .catch(error => {
       console.log(error);
