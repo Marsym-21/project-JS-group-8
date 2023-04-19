@@ -5,13 +5,19 @@ import './js/toggle-theme.js';
 import './js/spinner.js';
 import './js/header-mobile.js';
 import './js/toggle-theme.js';
+import { getBookData } from '../src/js/getBooksData.js';
 import { spinnerPlay, spinnerStop } from './js/spinner.js';
+import { getObjectShop } from './js/toggle-theme.js';
+
 spinnerPlay();
 window.addEventListener('load', () => {
   spinnerStop();
 });
 
-import { getBookData } from '../src/js/getBooksData.js';
+const header = document.querySelector('.header_btn__shopping');
+console.log(header);
+console.log(document);
+
 const logoPath = new URL('./images/icons.svg', import.meta.url);
 const emptyBook = new URL('./images/emptyBook.png', import.meta.url);
 const shopingListEl = document.querySelector('.shopingList');
@@ -52,6 +58,17 @@ function renderBook(localstorArr) {
               }
             }
           }
+
+            function checkValue(value) {
+if (value !== '') {
+return value;
+} else {
+let message = 'No more information about this book';
+return message;
+}
+}
+
+
           return `
 <li class="shoppinglist_item data-id="${_id}">
     <div class="shoppinglist_img-container">
@@ -94,7 +111,7 @@ function renderBook(localstorArr) {
         </li>
     </ul>
     <p class="shoppinglist_desc">
-        ${description}
+    ${checkValue(description)}
     </p>
     <p class="shoppinglist_author">${author}</p>
     <button class="shoppinglist_btn type="button">
@@ -148,7 +165,7 @@ function deleteBook(event) {
   />`;
       }
     }
-
   }
-
 }
+
+getObjectShop();
