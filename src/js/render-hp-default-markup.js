@@ -70,8 +70,8 @@ export function renderCategoryPage() {
                 </div>
               </div>
               <div class="item-title__wrap">
-                <h3 class="item__name">${data.title.slice(0, 19)}${
-                data.title.length > 19 ? '...' : ''
+                <h3 class="item__name">${data.title.slice(0, 15)}${
+                data.title.length > 15 ? '...' : ''
               }</h3>
                 <p class="item__author">${data.author}</p>
               </div>
