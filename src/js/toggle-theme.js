@@ -1,8 +1,8 @@
-const checkbox = document.getElementById('theme-checkbox');
+// const checkbox = document.getElementById('theme-checkbox');
 
-if (localStorage.getItem('theme') === 'dark') {
-  checkbox.checked = true;
-}
+// if (localStorage.getItem('theme') === 'dark') {
+//   checkbox.checked = true;
+// }
 
 export function getObject() {
   const ref = {
@@ -18,17 +18,19 @@ export function getObject() {
     headerUser: document.querySelector('.header_user_name'),
     headerLogoBook: document.querySelector('.header_logo_book'),
     seeMoreBtn: document.querySelector('.btn-see-more'),
+    bookBlockContainer: document.querySelector('.book-block'),
   };
+
+  const object = Object.keys(ref);
+  console.log(object);
 
   const checkbox = document.getElementById('theme-checkbox');
   if (localStorage.getItem('theme') === 'dark') {
     checkbox.checked = true;
     ref.body.classList.add('dark');
+    getArrayAddList(object);
   }
   console.log(ref);
-
-  const object = Object.keys(ref);
-  console.log(object);
 
   checkbox.addEventListener('change', () => {
     if (checkbox.checked) {
