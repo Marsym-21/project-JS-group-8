@@ -1,0 +1,28 @@
+.categories-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding-left: 0;
+}
+
+.default-main__title {
+    margin-left: 20px;
+}
+
+
+.main-title__first-part.dark {
+    color: var(--books-black-title-color);
+}
+
+.book_name.dark {
+    color: var(--books-black-title-color);
+}
+
+.left-bar {
+    @media screen and (min-width: 768px) {
+        padding-top: 112px;
+        display: flex;
+        justify-content: center;
+    }
+}
