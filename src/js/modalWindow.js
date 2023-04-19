@@ -22,14 +22,7 @@ export function checkLocalStorage() {
 }
 console.log(booksArray);
 
-function checkMessage() {
-  console.log(booksArray.includes(id));
-  if (booksArray.includes(id)) {
-    return (message = 'Remove from the shopping list');
-  } else {
-    return (message = 'Add to shopping list');
-  }
-}
+
 
 function checkValue(value) {
   if (value !== '') {
@@ -41,11 +34,26 @@ function checkValue(value) {
 }
 
 export function renderBookInformation(id) {
-  console.log(id);
+ 
   modalBackdrop.classList.remove('is-hidden');
   booksInform = new getBookData(id);
   modalContainer.innerHTML = '';
-
+  
+  function checkMessage() {
+    let message;
+    console.log(booksArray);
+    if (booksArray.includes(id)) {
+      message = 'Remove from the shopping list';
+      console.log(message)
+      return message;
+    } else {
+       message = 'Add to shopping list';
+       console.log(message)
+       return message;
+    }
+  
+  }
+  
   booksInform
     .getPromId()
     .then(data => {
@@ -170,9 +178,12 @@ function closeBtn() {
 
 export function renderModalWindow(e) {
   const data = e.currentTarget.id;
+
   checkLocalStorage();
   renderBookInformation(data);
 }
+
+
 
 modalBackdrop.addEventListener('click', e => {
   if (!e.target.classList.contains('modal-backdrop')) {
@@ -188,3 +199,5 @@ window.addEventListener('keydown', e => {
     closeBtn();
   }
 });
+
+
