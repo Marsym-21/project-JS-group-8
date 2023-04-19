@@ -1,5 +1,6 @@
 import { getBookData } from './getBooksData.js';
 import { spinnerPlay, spinnerStop } from './spinner.js';
+import { getObject } from './toggle-theme.js';
 
 let booksInform = new getBookData();
 const logoPath = new URL('../images/icons.svg', import.meta.url);
@@ -11,9 +12,9 @@ let booksArray = [];
 
 export function checkLocalStorage() {
   const getLocalstorage = localStorage.getItem('id');
-  console.log(getLocalstorage);
+
   const parseLokalstorage = JSON.parse(getLocalstorage);
-  console.log(parseLokalstorage);
+ 
 
   if (!parseLokalstorage) {
     booksArray = [];
@@ -21,7 +22,6 @@ export function checkLocalStorage() {
     booksArray = newArray.concat(parseLokalstorage);
   }
 }
-console.log(booksArray);
 
 function checkValue(value) {
   if (value !== '') {
@@ -40,14 +40,14 @@ export function renderBookInformation(id) {
 
   function checkMessage() {
     let message;
-    console.log(booksArray);
+   
     if (booksArray.includes(id)) {
       message = 'Remove from the shopping list';
-      console.log(message);
+    
       return message;
     } else {
       message = 'Add to shopping list';
-      console.log(message);
+     
       return message;
     }
   }
@@ -55,7 +55,7 @@ export function renderBookInformation(id) {
   booksInform
     .getPromId()
     .then(data => {
-      console.log(data);
+     
       function links(sms) {
         const link = data.buy_links;
         for (let i = 0; i < link.length; i += 1) {
@@ -70,7 +70,7 @@ export function renderBookInformation(id) {
       modalContainer.innerHTML = `
        <div class="modal-close__btn-wrapper">
       <button type='button' class='modal-close-btn close'>
-     <svg class="close" fill="none" width="30" height="30">
+     <svg class="close-svg" fill="none" width="30" height="30">
           <use href="${logoPath}#icon-x-close"></use>
 </svg>
     
@@ -100,7 +100,7 @@ export function renderBookInformation(id) {
    aria-label="amazon icon"
    >
   
-   <svg class="book" fill="none" width="60" height="60">
+   <svg class="book-svg" fill="none" width="60" height="60">
           <use href="${logoPath}#icon-amazon-ar21"></use>
 </svg>
 
@@ -113,7 +113,7 @@ export function renderBookInformation(id) {
    rel="noopener noreferrer"
    aria-label="Apple Book icon"
    >
-       <svg class="book"  width="30" height="30" fill="none">
+       <svg class="book-svg"  width="30" height="30" fill="none">
        <use href="${logoPath}#icon-apple-ibooks"></use> 
        </svg>
        </a>
@@ -126,7 +126,7 @@ export function renderBookInformation(id) {
    rel="noopener noreferrer"
    aria-label="Bookshop icon"
    >
-       <svg class="book"  width="40" height="40">
+       <svg class="book-svg black-book"  width="30" height="30">
               <use href="${logoPath}#icon-14008711"></use>
        </svg>
        </a>
@@ -135,13 +135,11 @@ export function renderBookInformation(id) {
        </div>
        </div>
        <div  class="modal-book__add__wrapper">  
-       <button type="button" class="modal-book__button" id="${
-         data.id
-       }">${checkMessage()}</button>  
+       <button type="button" class="modal-book__button">${checkMessage()}</button>  
    </div>  
         `;
 
-      console.log(modalContainer.innerHTML);
+      getObject();
 
       const closeButton = document.querySelector('.modal-close-btn');
       closeButton.addEventListener('click', closeBtn);
