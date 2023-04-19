@@ -16,29 +16,17 @@ const logoPath = new URL('./images/icons.svg', import.meta.url);
 const emptyBook = new URL('./images/emptyBook.png', import.meta.url);
 const shopingListEl = document.querySelector('.shopingList');
 
-const getLocal = localStorage.getItem('arrey');
+const getLocal = localStorage.getItem('id');
 let parseLokalstorageQ = JSON.parse(getLocal);
 
 shopingListEl.addEventListener('click', deleteBook);
 
-const getLocalstorages = localStorage.getItem('arrey');
+const getLocalstorages = localStorage.getItem('id');
 
-// const key = ['643282b2e85766588626a144', '643282b2e85766588626a0f2', '643282b2e85766588626a0f2', '643282b3e85766588626a194', '643282b2e85766588626a144', '643282b2e85766588626a144'];
-
-// stringKey = JSON.stringify(key);
-
-// localStorage.setItem('id', stringKey)
-
-// const getLocalstorage = localStorage.getItem('id')
-// parseLokalstorage = JSON.parse(getLocalstorage)
-
-let arrey = localStorage.getItem('arrey');
+let arrey = localStorage.getItem('id');
 let parceArrey = JSON.parse(arrey);
 console.log(parceArrey.length);
 
-// parseLokalstorageQ.map((id) => {
-
-// const getBook = new getBookData((id = `${id}`));
 
 function renderBook(localstorArr) {
   localstorArr.map(id => {
@@ -145,7 +133,7 @@ function deleteBook(event) {
       const newArr = JSON.stringify(parceArrey);
 
       // console.log(newArr)
-      localStorage.setItem('arrey', newArr);
+      localStorage.setItem('id', newArr);
       shopingListEl.innerHTML = '';
 
       let newRender = JSON.parse(newArr);
@@ -163,29 +151,6 @@ function deleteBook(event) {
       }
     }
 
-    // for (let i = 0; i < parceArrey.length; i++){
-    //   // console.log(parceArrey[i])
-
-    //   if (parceArrey[i] === id) {
-    //     foundId = id;
-    //     console.log('found')
-    //     console.log(id)
-    //    parceArrey.splice(foundId, 1)
-    //     console.log(parceArrey)
-    //   }
-    // }
-
-    // parceArrey.map((arreyId) => {
-    //   if (arreyId !== id) {
-    //     return;
-    //   } else {
-    //     console.log('Знайшли');
-    //     console.log(id) }
-    // })
   }
 
-  // getBook.getPromTopBooks().then(data => {
-  //       console.log(data)
-  // })
-  // })
 }
