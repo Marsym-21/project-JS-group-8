@@ -17,7 +17,7 @@ export function getObject() {
     headerUser: document.querySelector('.header_user_name'),
     headerLogoBook: document.querySelector('.header_logo_book'),
     headerBtnMobile: document.querySelector('.header_mobile_shopping'),
-    headerMobileHome: document.querySelector('.header_mobile_home'),
+    // headerMobileHome: document.querySelector('.header_mobile_home'),
     headerMobileCurrent: document.querySelector('.current_btn_mobile'),
     headerCloseSvg: document.querySelector('.menu-togle-close'),
     seeMoreBtn: document.querySelector('.btn-see-more'),
