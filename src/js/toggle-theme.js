@@ -22,6 +22,12 @@ export function getObject() {
     headerCloseSvg: document.querySelector('.menu-togle-close'),
     seeMoreBtn: document.querySelector('.btn-see-more'),
     bookBlockContainer: document.querySelector('.book-block'),
+    modaWindow: document.querySelector('.modal-container'),
+    modalWindowCloseBtn: document.querySelector('.modal-close-btn'),
+    addButton: document.querySelector('.modal-book__button'),
+    modalWindowAbout: document.querySelector('.modal-book__about'),
+    bookSvg: document.querySelector('.book-svg'),
+    blackBook: document.querySelector('.black-book'),
   };
 
   const object = Object.keys(ref);
