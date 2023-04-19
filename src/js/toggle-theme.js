@@ -1,8 +1,8 @@
-// const checkbox = document.getElementById('theme-checkbox');
+const checkbox = document.getElementById('theme-checkbox');
 
-// if (localStorage.getItem('theme') === 'dark') {
-//   checkbox.checked = true;
-// }
+if (localStorage.getItem('theme') === 'dark') {
+  checkbox.checked = true;
+}
 
 export function getObject() {
   const ref = {
