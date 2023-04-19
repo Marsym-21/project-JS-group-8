@@ -12,6 +12,7 @@ export function checkLocalStorage() {
   const getLocalstorage = localStorage.getItem('id');
   console.log(getLocalstorage);
   parseLokalstorage = JSON.parse(getLocalstorage);
+  console.log(parseLokalstorage);
 
   if (!parseLokalstorage) {
     booksArray = [];
@@ -19,8 +20,10 @@ export function checkLocalStorage() {
     booksArray = newArray.concat(parseLokalstorage);
   }
 }
+console.log(booksArray);
 
 function checkMessage() {
+  console.log(booksArray.includes(id));
   if (booksArray.includes(id)) {
     return (message = 'Remove from the shopping list');
   } else {
@@ -58,7 +61,7 @@ export function renderBookInformation(id) {
         }
       }
 
-      categoryArray = `
+      modalContainer.innerHTML = `
        <div class="modal-close__btn-wrapper">
       <button type='button' class='modal-close-btn close'>
      <svg class="close" fill="none" width="30" height="30">
@@ -132,7 +135,7 @@ export function renderBookInformation(id) {
    </div>  
         `;
 
-      modalContainer.innerHTML = categoryArray;
+      console.log(modalContainer.innerHTML);
 
       const closeButton = document.querySelector('.modal-close-btn');
       closeButton.addEventListener('click', closeBtn);
