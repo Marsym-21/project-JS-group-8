@@ -4,7 +4,10 @@ import { createCategoryString } from './getCategoryString.js';
 import { createFirstPartTitle } from './getCategoryTitle.js';
 import { createLastPartTitle } from './getCategoryTitle.js';
 import { spinnerPlay, spinnerStop } from './spinner.js';
+import { getObject } from './toggle-theme.js';
+
 spinnerPlay();
+
 window.addEventListener('load', () => {
   spinnerStop();
 });
@@ -97,5 +100,6 @@ function getString(e) {
     .catch(error => {
       console.log(error);
     });
+  getObject();
   spinnerStop();
 }

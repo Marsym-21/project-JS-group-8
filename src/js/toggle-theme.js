@@ -22,6 +22,8 @@ export function getObject() {
     headerCloseSvg: document.querySelector('.menu-togle-close'),
     seeMoreBtn: document.querySelector('.btn-see-more'),
     bookBlockContainer: document.querySelector('.book-block'),
+    bookName: document.querySelector('.book_name'),
+    mainTitleFirstPart: document.querySelector('.main-title__first-part'),
   };
 
   const object = Object.keys(ref);

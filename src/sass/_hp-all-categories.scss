@@ -1,14 +1,14 @@
-.categories-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    padding-left: 0;
-}
+// .categories-list {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     gap: 40px;
+//     padding-left: 0;
+// }
 
-.default-main__title {
-    margin-left: 20px;
-}
+// .default-main__title {
+//     margin-left: 20px;
+// }
 
 
 .main-title__first-part.dark {
@@ -19,10 +19,41 @@
     color: var(--books-black-title-color);
 }
 
-.left-bar {
-    @media screen and (min-width: 768px) {
-        padding-top: 112px;
-        display: flex;
-        justify-content: center;
-    }
+// .left-bar {
+//     @media screen and (min-width: 768px) {
+//         padding-top: 112px;
+//         display: flex;
+//         justify-content: center;
+//     }
+// }
+.categories .book-image {
+    height: 100%;
+}
+.categories-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding-left: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.book-card {
+    margin-bottom: 40px
+}
+.book-card:last-child {
+    margin-bottom: 0;
+}
+.book-card.book-author {
+    margin-bottom: 0;
+}
+
+.book-name {
+    margin-top: 14px;
+    margin-bottom: 4px;
+}
+
+.default__main-title {
+    color: #ffffff;
 }
