@@ -7,13 +7,3 @@ import './js/spinner.js';
 import './js/header-mobile.js';
 import './js/toggle-theme.js';
 import './js/modalWindow.js';
-
-let arr = [
-  '643282b2e85766588626a144',
-  '643282b2e85766588626a0f2',
-  '643282b3e85766588626a194',
-  '643282b2e85766588626a144',
-  '643282b2e85766588626a0f2',
-  '643282b3e85766588626a194',
-];
-localStorage.setItem('arrey', JSON.stringify(arr));
