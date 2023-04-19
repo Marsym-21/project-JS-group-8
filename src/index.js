@@ -7,5 +7,3 @@ import './js/spinner.js';
 import './js/header-mobile.js';
 import './js/toggle-theme.js';
 import './js/modalWindow.js';
-
-console.log(document);

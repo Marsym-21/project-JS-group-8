@@ -25,34 +25,34 @@ export function renderCategoryPage() {
   let categoryArray = [];
   booksInform
     .getPromTopBooks()
-    .then(books => {      
+    .then(books => {
       categoryArray = books.slice(0, 4).map(book => {
-        
-// слухаємо вьюпорт і відповідно до його розміру обрізаємо кількість книг ...
-let currentRenderWidth = 375;
-addEventListener('resize', event => {
-  if (
-    (window.innerWidth > 767 && currentRenderWidth < 768) ||
-    (window.innerWidth > 1439 && currentRenderWidth < 1440) ||
-    (window.innerWidth < 1440 && currentRenderWidth > 1439) ||
-    (window.innerWidth < 768 && currentRenderWidth > 767)
-  ) {
-    location.reload();
-  }
-});
-      
-currentRenderWidth = window.innerWidth;
-let sliseQuantity = 1;
-if (currentRenderWidth < 768) {
-  sliseQuantity = 1;
-} else if (currentRenderWidth > 767 && currentRenderWidth < 1440) {
-  sliseQuantity = 3;
-} else {
-  sliseQuantity = 5;
-      }
-      console.log(sliseQuantity);
+        // слухаємо вьюпорт і відповідно до його розміру обрізаємо кількість книг ...
+        let currentRenderWidth = 375;
+        addEventListener('resize', event => {
+          if (
+            (window.innerWidth > 767 && currentRenderWidth < 768) ||
+            (window.innerWidth > 1439 && currentRenderWidth < 1440) ||
+            (window.innerWidth < 1440 && currentRenderWidth > 1439) ||
+            (window.innerWidth < 768 && currentRenderWidth > 767)
+          ) {
+            location.reload();
+          }
+        });
 
-        const booksArray = book.books.slice(0, sliseQuantity)
+        currentRenderWidth = window.innerWidth;
+        let sliseQuantity = 1;
+        if (currentRenderWidth < 768) {
+          sliseQuantity = 1;
+        } else if (currentRenderWidth > 767 && currentRenderWidth < 1440) {
+          sliseQuantity = 3;
+        } else {
+          sliseQuantity = 5;
+        }
+        console.log(sliseQuantity);
+
+        const booksArray = book.books
+          .slice(0, sliseQuantity)
           .map(
             data =>
               `<li class="books-list__item">
