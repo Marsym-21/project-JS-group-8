@@ -11,7 +11,7 @@ let booksArray = [];
 export function checkLocalStorage() {
   const getLocalstorage = localStorage.getItem('id');
   console.log(getLocalstorage);
-  parseLokalstorage = JSON.parse(getLocalstorage);
+  const parseLokalstorage = JSON.parse(getLocalstorage);
   console.log(parseLokalstorage);
 
   if (!parseLokalstorage) {
