@@ -43,15 +43,21 @@
   }
 }
 .checkbox__header {
-  top: 50%;
-  display: none;
+  top: 30%;
+  position: relative;
+  left: 250px;
   //phone screen
   @media screen and (min-width: 480px) {
-    display: none;
+    top: 30%;
+    position: relative;
+    left: 465px;
   }
   //tablet screen
   @media screen and (min-width: 768px) {
+    top: 0%;
     display: flex;
+    left: auto;
+    right: auto;
   }
 }
 .header_main {
@@ -180,7 +186,8 @@
   border: none;
 }
 
-.current_btn {
+.current_btn,
+.current_btn_shopping {
   background-color: var(--header-left-btn-focus-color);
   font-weight: 700;
   font-size: 14px;
@@ -193,7 +200,8 @@
   border-radius: 36px;
   border: none;
 }
-.current_btn.dark {
+.current_btn.dark,
+.current_btn_shopping.dark {
   background-color: var(--header-left-btn-focus-color);
   color: var(--header-white-background-color);
 }
@@ -354,6 +362,7 @@
 }
 .menu-container {
   position: fixed;
+  visibility: hidden;
   top: 0;
   left: 0;
   display: flex;
@@ -361,16 +370,27 @@
   width: 100vw;
   height: 100vh;
   padding: 32px;
-  background-color: var(--logout-btn-color-text-focus);
+  background:  radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
   z-index: 999;
   transform: translateX(100%);
   transition: transform 250ms ease-in-out;
+  visibility: hidden;
+  
+    //tablet screen
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+    //desctop screen
+    @media screen and (min-width: 1200px) {
+     display: none;
+    }
 }
 .menu-container.dark {
   background-color: var(--header-black-background-color);
 }
 .menu-container.is-open {
   transform: translateX(0);
+  visibility: visible;
 }
 
 .menu-container .menu-toggle {
@@ -387,10 +407,10 @@
   margin: 0;
   list-style: none;
   margin-bottom: auto;
-  background-color: aliceblue;
-}
-.mobile-menu.dark {
-background-color: black;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(30%); 
+  padding-top: 183px;
 }
 
 .mobile-menu .link {
@@ -444,14 +464,13 @@ background-color: black;
   justify-content: center;
   align-items: center;
   border-radius: 36px;
-  background-color: var(--header-black-text-svg-color);
+  background-color: rgba(0, 0, 0, 0); ;
   border: none;
   cursor: pointer;
   margin-top: 20px;
 }
 .header_mobile_shopping.dark {
   color: var(--header-white-background-color);
-  background-color: var(--header-black-background-color);
 }
 .header_mobile_home {
   font-weight: 500;
@@ -487,7 +506,19 @@ background-color: black;
   border-radius: 36px;
   border: none;
 }
-.ccurrent_btn_mobile.dark {
+.current_btn_mobile.dark {
   background-color: var(--header-left-btn-focus-color);
   color: var(--book-black-description-text-color);
+}
+
+.menu_picture {
+  display: flex;
+}
+.menu_picture__png {
+position: absolute;
+justify-content: end;
+align-items: flex-end;
+left: 0;
+right: 0;
+transform: translateY(-87%) 
 }
