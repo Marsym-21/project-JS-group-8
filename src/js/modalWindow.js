@@ -1,6 +1,6 @@
 import { getBookData } from './getBooksData.js';
 import { spinnerPlay, spinnerStop } from './spinner.js';
-import { getObject } from './toggle-theme.js';
+import { getObjectModal } from './toggle-theme.js';
 
 let booksInform = new getBookData();
 const logoPath = new URL('../images/icons.svg', import.meta.url);
@@ -14,7 +14,6 @@ export function checkLocalStorage() {
   const getLocalstorage = localStorage.getItem('id');
 
   const parseLokalstorage = JSON.parse(getLocalstorage);
- 
 
   if (!parseLokalstorage) {
     booksArray = [];
@@ -40,14 +39,14 @@ export function renderBookInformation(id) {
 
   function checkMessage() {
     let message;
-   
+
     if (booksArray.includes(id)) {
       message = 'Remove from the shopping list';
-    
+
       return message;
     } else {
       message = 'Add to shopping list';
-     
+
       return message;
     }
   }
@@ -55,7 +54,6 @@ export function renderBookInformation(id) {
   booksInform
     .getPromId()
     .then(data => {
-     
       function links(sms) {
         const link = data.buy_links;
         for (let i = 0; i < link.length; i += 1) {
@@ -139,9 +137,8 @@ export function renderBookInformation(id) {
    </div>  
         `;
 
-      getObject();
-
       const closeButton = document.querySelector('.modal-close-btn');
+      console.log(closeButton);
       closeButton.addEventListener('click', closeBtn);
 
       const addButton = document.querySelector('.modal-book__button');
@@ -162,6 +159,7 @@ export function renderBookInformation(id) {
           localStorage.setItem('id', stringKey);
         }
       });
+      getObjectModal();
     })
     .catch(error => {
       console.log(error);
