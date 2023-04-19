@@ -40,9 +40,19 @@
 
   letter-spacing: -0.04em;
 
-  margin-top: 40px;
-  margin-left: 40px;
-  margin-bottom: 40px;
+
+// tablet screen
+  @media screen and (min-width: 768px) {
+    //
+    //
+  }
+  
+  // desktop screen
+  @media screen and (min-width: 1440px) {
+    margin-top: 0px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+  }
 }
 
 .main-title__first-part {
@@ -53,10 +63,23 @@
   color: #4f2ee8;
 }
 
+.books-list {
+  display: block;
+}
+
+.categories-list__item {
+  display: block;
+
+  
+}
+
 .categories-list__wrap {
+  
   outline: 2px solid red;
   outline-offset: -2px;
   margin-bottom: 40px;
+
+  display: inline-block;
 }
 
 /*-----------------
@@ -72,12 +95,14 @@
   outline: 2px solid red;
   outline-offset: -2px;
 
+  
+
   // tablet screen
   @media screen and (min-width: 768px) {
     // 
     display: flex;
     gap: 24px;
-    justify-content: space-between;
+    
   }
   
   // desktop screen
@@ -93,11 +118,11 @@
 /*------
   card 
 ------*/
-// .item-wrap {
-//   outline: 2px solid red;
-//   outline-offset: -2px;
+.item-wrap {
+  outline: 2px solid red;
+  outline-offset: -2px;
 
-// }
+}
 
 .item-img__wrap {
   outline: 2px solid red;
@@ -269,6 +294,7 @@
     box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15);
   }
 }
+
 .btn-see-more.dark {
   color: var(--seemore-btn-color-focus);
 }
