@@ -1716,6 +1716,9 @@ img {
   }
 }
 
+.support_tablet {
+  padding-top: 0;
+}
 @media screen and (max-width: 1439px) {
   .support_tablet {
     position: absolute;
@@ -1729,7 +1732,6 @@ img {
     -webkit-clip-path: inset(50%);
             clip-path: inset(50%);
     margin: -1px;
-    padding-top: 0;
   }
 }
 
