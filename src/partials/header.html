@@ -13,13 +13,13 @@
         <ul class="header_item">
           <li class="header_list">
             <a href="./index.html">
-              <button class="current_btn header_btn__home">HOME</button></a
+              <button class="current_btn header_btn__home">Home</button></a
             >
           </li>
           <li class="header_list">
             <a href="./shopping-list.html">
               <button class="header_btn__shopping white">
-                SHOPPING LIST
+                Shopping list
               </button></a
             >
             <svg class="header_link__icon" width="13.5" height="16.5">
@@ -69,7 +69,7 @@
 <div class="menu-container js-menu-container" id="mobile-menu">
   <button class="menu-toggle js-close-menu">
     <svg
-      class="menu-togle-svg"
+      class="menu-togle-close"
       viewBox="0 0 20 20"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -81,23 +81,17 @@
 
   <ul class="mobile-menu">
     <li class="header_list">
-      <button
-        class="header_btn__home current_btn"
-        type="submit"
-        onClick="location.href='../index.html'"
+      <a href="./index.html">
+        <button class="current_btn_mobile">Home</button></a
       >
-        Home
-      </button>
     </li>
     <li class="header_list">
-      <button
-        class="header_btn__shopping white"
-        type="submit"
-        onClick="location.href='./shopping-list.html'"
+      <a href="./shopping-list.html">
+        <button class="header_mobile_shopping white">
+          Shopping list
+        </button></a
       >
-        Shopping list
-      </button>
-      <svg class="header_link__icon" width="13.33" height="16.67">
+      <svg class="header_link__icon" width="13.5" height="16.5">
         <use href="./images/project-icon.svg#icon-lock"></use>
       </svg>
     </li>
