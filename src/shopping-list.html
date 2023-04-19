@@ -15,32 +15,23 @@
     <script type="module" src="./shopping-list.js"></script>
   </head>
 
-  <body>
+  <body class="body_shoping_list">
     <header>
       <include src="./partials/header.html"></include>
     </header>
 
     <main>
       <include src="./partials/spinner.html"></include>
-      
-    <script type="module" src="shopping-list.js"></script>
-  </head>
-
-  <body>
-    <header>
-      <include src="./partials/header.html"></include>
-    </header>
-
-    <main>
       <div class="container_shopping-list container">
-      <include src="./partials/support.html"></include>
+        <include src="./partials/support.html"></include>
         <div class="shoppingList-info">
-        <h1 class="shopingList_title">Shopping <span class="shopingList_title--color">List</span></h1>
-      
-        <ul class="shopingList"></ul>
+          <h1 class="shopingList_title">
+            Shopping <span class="shopingList_title--color">List</span>
+          </h1>
+
+          <ul class="shopingList"></ul>
+        </div>
       </div>
-      </div>
-      
     </main>
   </body>
 </html>
