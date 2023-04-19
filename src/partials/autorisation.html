@@ -1,0 +1,67 @@
+
+  <!-- <button id="js-signIn-btn"
+  type="button">BUTTON</button> -->
+    <div class="backdrop" id="data-modal">
+        <div class="modal ">
+          <form id="form" action="/" >
+          <button type="button" class="modal__btn " id="data-modal-close">
+            <svg class="close " >
+              <use xlink:href="./images/project-icon.svg#icon-x-close"></use>
+
+              </svg>
+              
+          </button>
+        <div class="input-control " id="name-1">
+              <label for="username"></label>
+              <input class="modal__input "
+              id="username" 
+              placeholder="NAME" 
+              name="username" type="text" >
+              <div class="error"></div>            
+        </div>
+        <div class="input-control ">
+          <label for="email"></label>
+          <div class="envelope">
+          <input class="modal__input "
+          id="email" 
+          placeholder="EMAIL" 
+          name="email" type="email">
+          <svg class="mail " width="28" height="28">
+            <use xlink:href="./images/project-icon.svg#icon-mail"></use>
+            </svg></div>
+          <div class="error"></div>            
+        </div>
+        <div class="input-control  last">
+          <label for="password"></label>
+          <div class="lock">
+          <input class="modal__input "
+          id="password" 
+          placeholder="PASSWORD" 
+          name="password" 
+          type="text">
+            <svg class="password-img " >
+              <use xlink:href="./images/project-icon.svg#icon-lock"></use>
+            </svg></div>
+            <div class="error"></div>          
+        </div>
+
+        <button 
+        type="submit" 
+        class="btnmodal__input-pass "
+        id="js-createUserBtn">SIGN UP</button>
+
+        <div class="sign-buttons gap ">
+          <button 
+          type="toggle" 
+          class="button-modal-approve " 
+          id="js-toggle">SIGN UP</button>  
+
+        <button 
+        type="toggle" 
+        class="button-modal-approve " 
+        id="js-toggle1">SIGN IN</button>  
+        </div>  
+
+      </form></div>
+    </div>
+
