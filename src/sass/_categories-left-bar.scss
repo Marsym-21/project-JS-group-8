@@ -1,0 +1,18 @@
+
+/*------------------
+  section left-bar
+------------------*/
+.left-bar {
+
+  // tablet screen
+  @media screen and (min-width: 768px) {
+    display: flex;
+
+  }
+
+  // desktop screen
+  @media screen and (min-width: 1440px) {
+    display: block;
+
+  }
+}

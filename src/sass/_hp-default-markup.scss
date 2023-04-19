@@ -6,6 +6,27 @@
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/*---------------------
+  main sections-block 
+---------------------*/
+
+.categories {
+
+
+  // tablet screen
+  @media screen and (min-width: 768px) {
+
+    //
+    //
+  }
+
+  // desktop screen
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    padding-top: 132px;
+  }
+}
+
 /*-----------------------------
   main title Best Sellers Books 
 -------------------------------*/
@@ -32,17 +53,9 @@
   color: #4f2ee8;
 }
 
-/*---------------------
-  main section-blocks 
----------------------*/
-.categories {
-  display: flex;
-  padding-top: 132px;
-}
-
 .categories-list__wrap {
-  // outline: 2px solid red;
-  // outline-offset: -2px;
+  outline: 2px solid red;
+  outline-offset: -2px;
   margin-bottom: 40px;
 }
 
@@ -50,20 +63,31 @@
   category-blocks
 -----------------*/
 .category {
-  // outline: 2px solid red;
-  // outline-offset: -2px;
+  outline: 2px solid red;
+  outline-offset: -2px;
   margin-bottom: 18px;
 }
 
 .books-list {
-  // outline: 2px solid red;
-  // outline-offset: -2px;
+  outline: 2px solid red;
+  outline-offset: -2px;
 
-  padding: 0;
-
-  display: flex;
-  gap: 24px;
-  justify-content: space-between;
+  // tablet screen
+  @media screen and (min-width: 768px) {
+    // 
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+  }
+  
+  // desktop screen
+  @media screen and (min-width: 1440px) {
+    padding: 0;
+      
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+  }
 }
 
 /*------
@@ -76,17 +100,33 @@
 // }
 
 .item-img__wrap {
-  // outline: 2px solid red;
-  // outline-offset: -2px;
+  outline: 2px solid red;
+  outline-offset: -2px;
 
   width: 180px;
   height: 256px;
 
   position: relative;
   padding: 0px 0px 58px 0px;
+  margin: 0;
 
   position: relative;
   overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    // 
+    // 
+    // 
+   }
+  
+  // desktop screen
+  @media screen and (min-width: 1440px) {
+   //
+  
+  //
+  //
+  //
+  }
 }
 
 .item-img {
@@ -124,7 +164,7 @@
 
   background-color: #eac645;
   transition: background-color 250ms var(--timing-function),
-    transform 250ms var(--timing-function);
+  transform 250ms var(--timing-function);
 }
 
 .item__overlay-text {
@@ -143,8 +183,11 @@
 }
 
 .item-title__wrap {
-  // outline: 2px solid red;
-  // outline-offset: -2px;
+  outline: 2px solid red;
+  outline-offset: -2px;
+
+  // width: 180px;
+  // height: 256px;
 
   padding-top: 14px;
 }
@@ -173,6 +216,9 @@
   color: #b4afaf;
 
   margin-top: 4px;
+  margin-right: 0px;  
+  margin-bottom: 0px;
+  margin-left: 0px;
   padding: 0;
 }
 
@@ -187,6 +233,7 @@
 
   width: 100%;
   height: 100%;
+
 }
 
 .btn-see-more {
