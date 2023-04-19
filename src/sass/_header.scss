@@ -230,9 +230,9 @@
     width: 184px;
     height: 45px;
     background: var(--header-right-btn-color);
-    -moz-border-radius: 45px / 36px;
-    -webkit-border-radius: 45px / 36px;
-    border-radius: 45px / 36px;
+    -moz-border-radius: 36px;
+    -webkit-border-radius: 36px;
+    border-radius: 36px;
   }
   //desctop screen
   @media screen and (min-width: 1200px) {
@@ -387,6 +387,10 @@
   margin: 0;
   list-style: none;
   margin-bottom: auto;
+  background-color: aliceblue;
+}
+.mobile-menu.dark {
+background-color: black;
 }
 
 .mobile-menu .link {
@@ -420,5 +424,70 @@
   stroke: var(--header-black-background-color);
 }
 .menu-togle-svg.dark {
-  fill: var(--header-black-text-svg-color);
+  stroke: var(--header-white-background-color);
+}
+.menu-togle-close {
+  fill: var(--header-black-background-color);
+  stroke: var(--header-black-background-color);
+}
+.menu-togle-close.dark {
+  stroke: var(--header-white-background-color);
+}
+.header_mobile_shopping {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--header-black-background-color);
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 36px;
+  background-color: var(--header-black-text-svg-color);
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.header_mobile_shopping.dark {
+  color: var(--header-white-background-color);
+  background-color: var(--header-black-background-color);
+}
+.header_mobile_home {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--header-black-background-color);
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--header-black-text-svg-color);
+  border: none;
+  margin-right: 24px;
+}
+
+.header_mobile_home.dark {
+  color: var(--header-white-background-color);
+  background-color: var(--body-white-firsttitle-color);
+}
+
+.current_btn_mobile {
+  background-color: var(--header-left-btn-focus-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px 16px;
+  border-radius: 36px;
+  border: none;
+}
+.ccurrent_btn_mobile.dark {
+  background-color: var(--header-left-btn-focus-color);
+  color: var(--book-black-description-text-color);
 }
