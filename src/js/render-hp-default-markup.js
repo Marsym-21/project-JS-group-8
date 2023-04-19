@@ -96,8 +96,8 @@ export function renderCategoryPage() {
       renderCategoryList();
       seeMorebtn();
       getObject();
-      const wrapFunction = document.querySelectorAll('.item-wrap');
-      wrapFunction.forEach(element => {
+      const wrapElement = document.querySelectorAll('.item-wrap');
+      wrapElement.forEach(element => {
         element.addEventListener('click', renderModalWindow);
       });
     })
