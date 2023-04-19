@@ -8,18 +8,18 @@ const modalBackdrop = document.querySelector('.modal-backdrop');
 const newArray = [];
 let booksArray = [];
 
-export function checkLocalStorage() {
-  const getLocalstorage = localStorage.getItem('id');
-  console.log(getLocalstorage);
-  parseLokalstorage = JSON.parse(getLocalstorage);
-  console.log(parseLokalstorage);
+// export function checkLocalStorage() {
+//   const getLocalstorage = localStorage.getItem('id');
+//   console.log(getLocalstorage);
+//   parseLokalstorage = JSON.parse(getLocalstorage);
+//   console.log(parseLokalstorage);
 
-  if (!parseLokalstorage) {
-    booksArray = [];
-  } else {
-    booksArray = newArray.concat(parseLokalstorage);
-  }
-}
+//   if (!parseLokalstorage) {
+//     booksArray = [];
+//   } else {
+//     booksArray = newArray.concat(parseLokalstorage);
+//   }
+// }
 console.log(booksArray);
 
 // function checkMessage() {
