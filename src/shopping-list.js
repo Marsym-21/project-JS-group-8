@@ -58,6 +58,17 @@ function renderBook(localstorArr) {
               }
             }
           }
+
+            function checkValue(value) {
+if (value !== '') {
+return value;
+} else {
+let message = 'No more information about this book';
+return message;
+}
+}
+
+
           return `
 <li class="shoppinglist_item data-id="${_id}">
     <div class="shoppinglist_img-container">
@@ -100,7 +111,7 @@ function renderBook(localstorArr) {
         </li>
     </ul>
     <p class="shoppinglist_desc">
-        ${description}
+    ${checkValue(description)}
     </p>
     <p class="shoppinglist_author">${author}</p>
     <button class="shoppinglist_btn type="button">
