@@ -131,7 +131,7 @@ export function renderBookInformation(id) {
        <div  class="modal-book__add__wrapper">  
        <button type="button" class="modal-book__button" id="${
          data.id
-       }"></button>  
+       }">${checkMessage()}</button>  
    </div>  
         `;
 
