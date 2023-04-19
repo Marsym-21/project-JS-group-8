@@ -8,28 +8,28 @@ const modalBackdrop = document.querySelector('.modal-backdrop');
 const newArray = [];
 let booksArray = [];
 
-// export function checkLocalStorage() {
-//   const getLocalstorage = localStorage.getItem('id');
-//   console.log(getLocalstorage);
-//   parseLokalstorage = JSON.parse(getLocalstorage);
-//   console.log(parseLokalstorage);
+export function checkLocalStorage() {
+  const getLocalstorage = localStorage.getItem('id');
+  console.log(getLocalstorage);
+  parseLokalstorage = JSON.parse(getLocalstorage);
+  console.log(parseLokalstorage);
 
-//   if (!parseLokalstorage) {
-//     booksArray = [];
-//   } else {
-//     booksArray = newArray.concat(parseLokalstorage);
-//   }
-// }
+  if (!parseLokalstorage) {
+    booksArray = [];
+  } else {
+    booksArray = newArray.concat(parseLokalstorage);
+  }
+}
 console.log(booksArray);
 
-// function checkMessage() {
-//   console.log(booksArray.includes(id));
-//   if (booksArray.includes(id)) {
-//     return (message = 'Remove from the shopping list');
-//   } else {
-//     return (message = 'Add to shopping list');
-//   }
-// }
+function checkMessage() {
+  console.log(booksArray.includes(id));
+  if (booksArray.includes(id)) {
+    return (message = 'Remove from the shopping list');
+  } else {
+    return (message = 'Add to shopping list');
+  }
+}
 
 function checkValue(value) {
   if (value !== '') {
@@ -142,35 +142,35 @@ export function renderBookInformation(id) {
 
       const addButton = document.querySelector('.modal-book__button');
 
-      // addButton.addEventListener('click', () => {
-      //   if (booksArray.includes(id)) {
-      //     let bookIndex = booksArray.indexOf(id);
+      addButton.addEventListener('click', () => {
+        if (booksArray.includes(id)) {
+          let bookIndex = booksArray.indexOf(id);
 
-      //     booksArray.splice(bookIndex, 1);
-      //     stringKey = JSON.stringify(booksArray);
-      //     addButton.textContent = `${checkMessage()}`;
-      //     localStorage.setItem('id', stringKey);
-      //     return;
-      //   } else {
-      //     booksArray.push(id);
-      //     addButton.textContent = `${checkMessage()}`;
-      //     stringKey = JSON.stringify(booksArray);
-      //     localStorage.setItem('id', stringKey);
-      //   }
-      // });
+          booksArray.splice(bookIndex, 1);
+          stringKey = JSON.stringify(booksArray);
+          addButton.textContent = `${checkMessage()}`;
+          localStorage.setItem('id', stringKey);
+          return;
+        } else {
+          booksArray.push(id);
+          addButton.textContent = `${checkMessage()}`;
+          stringKey = JSON.stringify(booksArray);
+          localStorage.setItem('id', stringKey);
+        }
+      });
     })
     .catch(error => {
       console.log(error);
     });
 }
 
-// function closeBtn() {
-//   modalBackdrop.classList.add('is-hidden');
-// }
+function closeBtn() {
+  modalBackdrop.classList.add('is-hidden');
+}
 
 export function renderModalWindow(e) {
   const data = e.currentTarget.id;
-  checkLocalStorage(data);
+  checkLocalStorage();
   renderBookInformation(data);
 }
 
