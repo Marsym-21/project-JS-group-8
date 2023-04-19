@@ -25,8 +25,6 @@ const getLocalstorages = localStorage.getItem('id');
 
 let arrey = localStorage.getItem('id');
 let parceArrey = JSON.parse(arrey);
-console.log(parceArrey.length);
-
 
 function renderBook(localstorArr) {
   localstorArr.map(id => {
