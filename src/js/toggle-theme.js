@@ -7,6 +7,7 @@ if (localStorage.getItem('theme') === 'dark') {
 export function getObject() {
   const ref = {
     body: document.querySelector('body'),
+    body_list: document.querySelector('body_shoping_list'),
     header: document.querySelector('.header_btn__shopping'),
     newElem: document.querySelector('.btn-see-more'),
     headerBody: document.querySelector('.header'),
@@ -23,7 +24,7 @@ export function getObject() {
     seeMoreBtn: document.querySelector('.btn-see-more'),
     bookBlockContainer: document.querySelector('.book-block'),
   };
-
+  console.log(ref.body_list);
   const object = Object.keys(ref);
   console.log(object);
 
