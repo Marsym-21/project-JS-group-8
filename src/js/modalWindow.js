@@ -1,4 +1,5 @@
 import { getBookData } from './getBooksData.js';
+import { spinnerPlay, spinnerStop } from './spinner.js';
 
 let booksInform = new getBookData();
 const logoPath = new URL('../images/icons.svg', import.meta.url);
@@ -22,8 +23,6 @@ export function checkLocalStorage() {
 }
 console.log(booksArray);
 
-
-
 function checkValue(value) {
   if (value !== '') {
     return value;
@@ -34,26 +33,25 @@ function checkValue(value) {
 }
 
 export function renderBookInformation(id) {
- 
+  spinnerPlay();
   modalBackdrop.classList.remove('is-hidden');
   booksInform = new getBookData(id);
   modalContainer.innerHTML = '';
-  
+
   function checkMessage() {
     let message;
     console.log(booksArray);
     if (booksArray.includes(id)) {
       message = 'Remove from the shopping list';
-      console.log(message)
+      console.log(message);
       return message;
     } else {
-       message = 'Add to shopping list';
-       console.log(message)
-       return message;
+      message = 'Add to shopping list';
+      console.log(message);
+      return message;
     }
-  
   }
-  
+
   booksInform
     .getPromId()
     .then(data => {
@@ -170,6 +168,7 @@ export function renderBookInformation(id) {
     .catch(error => {
       console.log(error);
     });
+  spinnerStop();
 }
 
 function closeBtn() {
@@ -182,8 +181,6 @@ export function renderModalWindow(e) {
   checkLocalStorage();
   renderBookInformation(data);
 }
-
-
 
 modalBackdrop.addEventListener('click', e => {
   if (!e.target.classList.contains('modal-backdrop')) {
@@ -199,5 +196,3 @@ window.addEventListener('keydown', e => {
     closeBtn();
   }
 });
-
-
