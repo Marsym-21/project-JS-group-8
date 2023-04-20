@@ -23,7 +23,9 @@ export function seeMorebtn() {
   function renderCategory(e) {
     spinnerPlay();
     e.preventDefault();
-
+    if (!e.target.classList.contains('all')) {
+      categoryList.classList.add('test');
+    }
     categoryList.innerHTML = '';
 
     const data = e.target.id;
