@@ -23,7 +23,7 @@ export function getObject() {
     seeMoreBtn: document.querySelector('.btn-see-more'),
     bookBlockContainer: document.querySelector('.book-block'),
     // newElem: document.querySelector('#seemore__btn'),
-
+    
     autorisationModal: document.querySelector('.modal'),
     autorisationBigButton: document.querySelector('.btnmodal__input-pass'),
     autorisationInput: document.querySelector('.input-control'),
@@ -39,7 +39,7 @@ export function getObject() {
     autorisationCLoseSvG: document.querySelector('.close'),
     autorisationPasswordSvG: document.querySelector('.password-img'),
     autorisationMailSvG: document.querySelector('.mail'),
-    autorisationPlaceholder: document.querySelector('placeholder'),
+    autorisationPlaceholder: document.getElementById('#placeholder'),
   };
 
   const object = Object.keys(ref);
