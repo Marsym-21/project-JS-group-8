@@ -137,11 +137,13 @@ export function renderBookInformation(id) {
 
       const closeButton = document.querySelector('.modal-close-btn');
      
-      closeButton.addEventListener('click', closeBtn);
+     
+      
 
       const addButton = document.querySelector('.modal-book__button');
 
-      addButton.addEventListener('click', () => {
+      addButton.addEventListener('click', addBtn);
+      function addBtn() {
         if (booksArray.includes(id)) {
           let bookIndex = booksArray.indexOf(id);
 
@@ -156,8 +158,14 @@ export function renderBookInformation(id) {
           const stringKey = JSON.stringify(booksArray);
           localStorage.setItem('id', stringKey);
         }
-      });
+      };
       getObjectModal();
+      closeButton.addEventListener('click', closeBtn);
+      function closeBtn() {
+        modalBackdrop.classList.add('is-hidden');
+        bodyModalOpen.classList.remove('modal-open');
+        addButton.removeEventListener('click', addBtn);
+      }
     })
     .catch(error => {
       console.log(error.message);
@@ -165,10 +173,6 @@ export function renderBookInformation(id) {
   spinnerStop();
 }
 
-function closeBtn() {
-  modalBackdrop.classList.add('is-hidden');
-  bodyModalOpen.classList.remove('modal-open');
-}
 
 export function renderModalWindow(e) {
   const data = e.currentTarget.id;
