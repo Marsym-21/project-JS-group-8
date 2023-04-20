@@ -4,7 +4,6 @@ import '../../node_modules/tiny-slider/src/tiny-slider.scss';
 // import Swiper from 'swiper';
 // import '../../node_modules/swiper/swiper.scss';
 
-console.log(tns);
 function addSupportItemsToList(arr) {
   return arr.map(
     item =>

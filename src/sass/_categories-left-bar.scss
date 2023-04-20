@@ -40,3 +40,14 @@
     padding-left: 0;
   }
 }
+
+.item__name.dark {
+  color: var(--header-right-btn-text-color);
+}
+
+.right-bar.test {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
