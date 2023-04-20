@@ -1588,7 +1588,7 @@ img {
 .modal-book__author {
   font-size: 14px;
   line-height: 18px;
-  color: #B4AFAF;
+  color: #b4afaf;
 }
 
 .modal-book__about {
@@ -1625,6 +1625,12 @@ img {
   border: 1.5px solid var(--header-right-btn-color);
   background-color: var(--header-black-background-color);
   color: var(--header-black-text-svg-color);
+}
+.modal-book__button.dark:hover, .modal-book__button.dark:focus {
+  background-color: var(--header-right-btn-color);
+  -webkit-box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.1490196078);
+          box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.1490196078);
+  color: var(--body-black-firsttitle-color);
 }
 
 .modal-book__stores {

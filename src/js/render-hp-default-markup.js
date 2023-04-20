@@ -95,14 +95,14 @@ export function renderCategoryPage() {
 
       renderCategoryList();
       seeMorebtn();
-      getObject();
       const wrapElement = document.querySelectorAll('.item-wrap');
       wrapElement.forEach(element => {
         element.addEventListener('click', renderModalWindow);
       });
+      getObject();
     })
     .catch(error => {
-      console.log(error);
+      console.log(error.message);
     });
   spinnerStop();
 }
