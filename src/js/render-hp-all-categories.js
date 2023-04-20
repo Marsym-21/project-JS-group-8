@@ -61,10 +61,9 @@ function getString(e) {
   e.target.classList.add('active');
 
   const categoryString = createCategoryString(`${data}`);
-   
+
   let categoryArray = [];
 
-  const boxBooks
   const booksInform = new getBookData(0, categoryString);
   booksInform
     .getPromCategory()
