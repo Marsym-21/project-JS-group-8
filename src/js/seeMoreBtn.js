@@ -3,6 +3,7 @@ import { getBookData } from './getBooksData';
 import { createFirstPartTitle } from './getCategoryTitle.js';
 import { createLastPartTitle } from './getCategoryTitle.js';
 import { renderModalWindow } from './modalWindow.js';
+import { getObjectSeeMore } from './toggle-theme.js';
 import { spinnerPlay, spinnerStop } from './spinner.js';
 spinnerPlay();
 window.addEventListener('load', () => {
@@ -68,9 +69,10 @@ export function seeMorebtn() {
         bookCardItem.forEach(element => {
           element.addEventListener('click', renderModalWindow);
         });
+        getObjectSeeMore();
       })
       .catch(error => {
-        console.log(error);
+        console.log(error.message);
       });
     spinnerStop();
   }

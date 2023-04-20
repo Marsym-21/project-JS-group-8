@@ -8,6 +8,7 @@ import './js/toggle-theme.js';
 import { getBookData } from '../src/js/getBooksData.js';
 import { spinnerPlay, spinnerStop } from './js/spinner.js';
 import { getObjectShop } from './js/toggle-theme.js';
+remobeClassCurrent();
 
 spinnerPlay();
 window.addEventListener('load', () => {
@@ -25,6 +26,9 @@ const shopingListEl = document.querySelector('.shopingList');
 
 const getLocal = localStorage.getItem('id');
 let parseLokalstorageQ = JSON.parse(getLocal);
+if (parseLokalstorageQ.length === 0) {
+  addPictureEmpty();
+}
 
 shopingListEl.addEventListener('click', deleteBook);
 
@@ -86,7 +90,7 @@ function renderBook(localstorArr) {
             <a href="${links(
               'Amazon'
             )}" target="_blank" rel="noopener noreferrer">
-                <svg fill="none" width="55" height="60">
+                <svg class="book-svg" fill="none" width="55" height="60">
                         <use href="${logoPath}#icon-amazon-ar21"></use>
                     </svg>
             </a>
@@ -95,7 +99,7 @@ function renderBook(localstorArr) {
             <a href="${links(
               'Apple Books'
             )}" target="_blank" rel="noopener noreferrer">
-                <svg width="28" height="27" fill="none">
+                <svg class="book-svg" width="28" height="27" fill="none">
                         <use href="${logoPath}#icon-apple-ibooks"></use>
                     </svg>
             </a>
@@ -104,7 +108,7 @@ function renderBook(localstorArr) {
             <a href="${links(
               'Bookshop'
             )}" target="_blank" rel="noopener noreferrer">
-                <svg width="32" height="32">
+                <svg class="black-book" width="32" height="32">
                         <use href="${logoPath}#icon-14008711"></use>
                     </svg>
             </a>
@@ -155,7 +159,16 @@ function deleteBook(event) {
       renderBook(newRender);
       if (parceArrey.length < 1) {
         shopingListEl.innerHTML = '';
-        shopingListEl.innerHTML = `<p class="empty-book-text"> 
+        addPictureEmpty();
+      }
+    }
+  }
+}
+
+getObjectShop();
+
+function addPictureEmpty() {
+  shopingListEl.innerHTML = `<p class="empty-book-text"> 
     This page is empty, add some books and proceed to order. 
   </p> 
   <img 
@@ -164,9 +177,11 @@ function deleteBook(event) {
     srcset="${emptyBook} 1x, ${emptyBookRetina} 2x"
     alt="The page is emrty" 
   />`;
-      }
-    }
-  }
 }
 
-getObjectShop();
+function remobeClassCurrent() {
+  const btnHome = document.querySelector('.header_btn__home');
+  btnHome.classList.remove('current_btn');
+  const btnShopping = document.querySelector('.header_btn__shopping');
+  btnShopping.classList.add('current_btn');
+}

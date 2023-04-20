@@ -1,3 +1,4 @@
+@import './utils';
 .container_shopping-list {
   display: flex;
   gap: 40px;
@@ -28,19 +29,22 @@
 }
 
 .support_tablet {
-  @media screen and (max-width: 1439px) {
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    border: 0;
+  @media screen and (max-width: 1439.99px) {
     padding: 0;
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     margin: -1px;
   }
   padding-top: 0;
+  @media screen and(max-width: 1439.99px) {
+    display: none;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+  }
 }
 
 .shopingList_title {
@@ -51,11 +55,10 @@
   letter-spacing: -0.04em;
   margin-top: 0;
   margin-bottom: 40px;
-  margin-left: 75px;
-  color: #111111;
+
+  color: var(--books-white-title-color);
 
   @media screen and (min-width: 768px) {
-    margin-left: 200px;
     font-weight: 700;
     font-size: 48px;
     line-height: 52px;
@@ -80,7 +83,7 @@
 }
 
 .shoppinglist_item {
-  border: 2px solid rgba(79, 46, 232, 0.4);
+  border: 2px solid var(--shoppinglist-border-color);
   border-radius: 16px;
   grid-template:
     'photo info info' min-content
@@ -171,7 +174,7 @@
   font-size: 16px;
   font-weight: 700;
   line-height: 1.12;
-  
+
   @media screen and (max-width: 767.99px) {
     width: 150px;
   }
@@ -248,8 +251,6 @@
 .shoppinglist_btn {
   width: 28px;
   height: 28px;
-  background-color: rgba(0, 0, 0, 0);
-  // background-image: url(icons.31d2e38d.svg#icon-dump);
   border-radius: 50%;
   border-color: transparent;
   display: block;
@@ -266,8 +267,20 @@
   position: absolute;
   top: -1px;
 }
-
-// .............
+.book-svg {
+  filter: drop-shadow(0px 3px 3px var(--book-svg-color));
+}
+.book-svg.dark {
+  filter: drop-shadow(0px 3px 3px var(--book-svg-color));
+}
+.black-book {
+  background-color: var(--black-book-dark-color);
+  border-radius: 10px;
+}
+.black-book.dark {
+  background-color: var(--black-book-dark-color);
+  border-radius: 10px;
+}
 
 .empty-book-page {
   background-color: inherit;
@@ -287,6 +300,7 @@
   margin-left: 55px;
   margin-right: 55px;
   margin-bottom: 14px;
+  margin-top: 120px;
   max-width: 244px;
   font-weight: 400;
   font-size: 14px;
@@ -300,10 +314,11 @@
 
   // tablet screen
   @media screen and (min-width: 768px) {
-    margin-left: 223px;
-    margin-right: 223px;
+    margin-left: 190px;
+    margin-right: 190px;
+    margin-top: 140px;
     font-size: 18px;
-    max-width: 322px;
+    max-width: 349px;
     line-height: 1.33;
   }
 }
@@ -319,4 +334,7 @@
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   margin: -1px;
+}
+.shopingList_title--first.dark {
+  color: var(--body-black-firsttitle-color);
 }
