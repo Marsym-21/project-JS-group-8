@@ -10,6 +10,7 @@ if (localStorage.getItem('theme') === 'dark') {
 export function getObject() {
   const ref = {
     body: document.querySelector('body'),
+    bookBlockContainer: document.querySelector('.book-block'),
     header: document.querySelector('.header_btn__shopping'),
     headerLogo: document.querySelector('.header_logo'),
     headerBody: document.querySelector('.header'),
@@ -17,9 +18,14 @@ export function getObject() {
     spanTitle: document.querySelector('.main-title__first-part'),
     headerBtnToogle: document.querySelector('.menu-togle-svg'),
     headerMenuContainer: document.querySelector('.menu-container'),
+    headerMenuMobile: document.querySelector('.mobile-menu'),
     headerUser: document.querySelector('.header_user_name'),
     headerLogoBook: document.querySelector('.header_logo_book'),
     headerBtnMobile: document.querySelector('.header_mobile_shopping'),
+    headerMobileCurrent: document.querySelector('.current_btn_mobile'),
+    headerMobileCurrent: document.querySelector('.current_btn_mobile'),
+    headerCloseSvg: document.querySelector('.menu-togle-close'),
+    bookBlockContainer: document.querySelector('.book-block'),
     headerCloseSvg: document.querySelector('.menu-togle-close'),
     bookBlockContainer: document.querySelector('.book-block'),
     modaWindow: document.querySelector('.modal-container'),
