@@ -8,6 +8,7 @@ import './js/toggle-theme.js';
 import { getBookData } from '../src/js/getBooksData.js';
 import { spinnerPlay, spinnerStop } from './js/spinner.js';
 import { getObjectShop } from './js/toggle-theme.js';
+remobeClassCurrent();
 
 spinnerPlay();
 window.addEventListener('load', () => {
@@ -176,4 +177,11 @@ function addPictureEmpty() {
     srcset="${emptyBook} 1x, ${emptyBookRetina} 2x"
     alt="The page is emrty" 
   />`;
+}
+
+function remobeClassCurrent() {
+  const btnHome = document.querySelector('.header_btn__home');
+  btnHome.classList.remove('current_btn');
+  const btnShopping = document.querySelector('.header_btn__shopping');
+  btnShopping.classList.add('current_btn');
 }

@@ -66,6 +66,7 @@ export function getObjectShop() {
     body: document.querySelector('body'),
     header: document.querySelector('.header_btn__shopping'),
     headerBody: document.querySelector('.header'),
+    headerBtnHome: document.querySelector('.header_btn__home'),
     headerBtnActive: document.querySelector('.current_btn'),
     headerBtnToogle: document.querySelector('.menu-togle-svg'),
     headerMenuContainer: document.querySelector('.menu-container'),
@@ -74,7 +75,10 @@ export function getObjectShop() {
     headerBtnMobile: document.querySelector('.header_mobile_shopping'),
     headerMobileCurrent: document.querySelector('.current_btn_mobile'),
     headerCloseSvg: document.querySelector('.menu-togle-close'),
+    title: document.querySelector('.shopingList_title--first'),
   };
+
+  console.log(ref.title);
   const object = Object.keys(ref);
 
   const checkbox = document.getElementById('theme-checkbox');

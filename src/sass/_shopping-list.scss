@@ -1,3 +1,4 @@
+@import './utils';
 .container_shopping-list {
   display: flex;
   gap: 40px;
@@ -333,4 +334,7 @@
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   margin: -1px;
+}
+.shopingList_title--first.dark {
+  color: var(--body-black-firsttitle-color);
 }
