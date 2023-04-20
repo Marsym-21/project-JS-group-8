@@ -6,6 +6,7 @@ let booksInform = new getBookData();
 const logoPath = new URL('../images/icons.svg', import.meta.url);
 const modalContainer = document.querySelector('.modal-container');
 const modalBackdrop = document.querySelector('.modal-backdrop');
+const bodyModalOpen = document.querySelector('body');
 
 const newArray = [];
 let booksArray = [];
@@ -34,6 +35,7 @@ function checkValue(value) {
 export function renderBookInformation(id) {
   spinnerPlay();
   modalBackdrop.classList.remove('is-hidden');
+  bodyModalOpen.classList.add('modal-open')
   booksInform = new getBookData(id);
   modalContainer.innerHTML = '';
 
@@ -165,6 +167,7 @@ export function renderBookInformation(id) {
 
 function closeBtn() {
   modalBackdrop.classList.add('is-hidden');
+  bodyModalOpen.classList.remove('modal-open');
 }
 
 export function renderModalWindow(e) {
