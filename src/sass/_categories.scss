@@ -1,7 +1,4 @@
-
-
 .categories-list.cards-markup {
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -17,7 +14,6 @@
     justify-content: space-between;
     padding-left: 32px;
     padding-right: 32px;
-
   }
   @media screen and (min-width: 1440px) {
     column-gap: 24px;
@@ -27,10 +23,8 @@
   }
 }
 
-
 .books {
   height: 472px;
-  margin-bottom: 86px;
 }
 
 .books_list {
@@ -68,15 +62,14 @@
   }
 }
 
-
 .book-card_thumb {
   @media screen and (min-width: 768px) {
     min-width: 218px;
     min-height: 316px;
   }
   @media screen and (min-width: 1440px) {
-  min-width: 180px;
-  min-height: 256px;
+    min-width: 180px;
+    min-height: 256px;
   }
 }
 
