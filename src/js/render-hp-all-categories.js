@@ -73,10 +73,9 @@ function getString(e) {
       categoryArray = books
         .map(
           book =>
-            `<li class="book-card" id="${book._id}">
-            <div class="book-card_thumb">
-              <img class="book-image" src="${book.book_image}" alt="${
-
+            `<li class="books-list__item" id="${book._id}">
+            <div class = "item-img__wrap">
+              <img class="item-img" src="${book.book_image}" alt="${
               book.title
             }">
             <div class="item__overlay">
@@ -90,7 +89,6 @@ function getString(e) {
               <p class="book_author">${book.author.slice(0, 30)}${
               book.author.length > 30 ? '...' : ''
             }</p>
-            </div>
             </li>`
         )
         .join('');

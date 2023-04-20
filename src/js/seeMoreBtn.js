@@ -24,7 +24,7 @@ export function seeMorebtn() {
     spinnerPlay();
     e.preventDefault();
     if (!e.target.classList.contains('all')) {
-      categoryList.classList.add('test');
+      categoryList.classList.add('cards-markup');
     }
     categoryList.innerHTML = '';
 
