@@ -1247,14 +1247,6 @@ img {
   background: #111111;
 }
 
-.test {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
 *,
 *::before,
 *::after {

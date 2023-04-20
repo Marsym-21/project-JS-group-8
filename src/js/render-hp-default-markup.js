@@ -19,7 +19,7 @@ const categoryList = document.querySelector('.categories-list');
 
 export function renderCategoryPage() {
   spinnerPlay();
-  categoryList.classList.remove('test');
+
   // Get reference to the ul element using its id
   firstSpanMainTitle.textContent = 'Best Sellers';
   secondSpanMainTitle.textContent = 'Books';

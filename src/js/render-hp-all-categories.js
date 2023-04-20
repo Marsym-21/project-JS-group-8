@@ -52,10 +52,6 @@ function getString(e) {
   categoryList.innerHTML = '';
   const data = e.target.innerHTML;
 
-  if (!e.target.classList.contains('all')) {
-    categoryList.classList.add('test');
-  }
-
   // Добавляем класс "active" к нажатому элементу списка
   const activeItem = document.querySelector('.category-link.active');
   if (activeItem) {
