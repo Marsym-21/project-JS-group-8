@@ -117,6 +117,8 @@ export function getObjectModal() {
     modalWindowAbout: document.querySelector('.modal-book__about'),
     bookSvg: document.querySelector('.book-svg'),
     blackBook: document.querySelector('.black-book'),
+    yellowBook: document.querySelector('.yellow-book'),
+    closeSvg: document.querySelector('.close-svg'),
   };
 
   const object = Object.keys(ref);
