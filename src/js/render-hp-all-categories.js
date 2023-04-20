@@ -95,7 +95,7 @@ function getString(e) {
 
       categoryList.insertAdjacentHTML('beforeend', categoryArray);
 
-      const bookCardItem = document.querySelectorAll('.book-card');
+      const bookCardItem = document.querySelectorAll('.books-list__item');
       bookCardItem.forEach(element => {
         element.addEventListener('click', renderModalWindow);
       });

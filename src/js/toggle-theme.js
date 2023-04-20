@@ -41,6 +41,8 @@ export function getObject() {
   if (localStorage.getItem('theme') === 'dark') {
     checkbox.checked = true;
     ref.body.classList.add('dark');
+    seeMoreBtn.forEach(element => element.classList.add('dark'));
+    bookName.forEach(element => element.classList.add('dark'));
     getArrayAddList(object);
   }
 
@@ -172,6 +174,7 @@ export function getObjectCategory() {
   if (localStorage.getItem('theme') === 'dark') {
     checkbox.checked = true;
     ref.body.classList.add('dark');
+    bookName.forEach(element => element.classList.add('dark'));
     getArrayAddList(object);
   }
 

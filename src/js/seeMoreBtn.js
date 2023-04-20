@@ -23,7 +23,9 @@ export function seeMorebtn() {
   function renderCategory(e) {
     spinnerPlay();
     e.preventDefault();
-
+    if (!e.target.classList.contains('all')) {
+      categoryList.classList.add('test');
+    }
     categoryList.innerHTML = '';
 
     const data = e.target.id;
@@ -40,10 +42,16 @@ export function seeMorebtn() {
         categoryArray = books
           .map(
             book =>
-              `<li class="book-card" id="${book._id}">
-              <img class="book-image" src="${book.book_image}" alt="${
+              `<li class="books-list__item" id="${book._id}">
+            <div class = "item-img__wrap">
+              <img class="item-img" src="${book.book_image}" alt="${
                 book.title
               }">
+            <div class="item__overlay">
+            
+                <p class="item__overlay-text">quick view</p>
+                </div>
+                </div>
               <h2 class="book_name">${book.title.slice(0, 20)}${
                 book.title.length > 20 ? '...' : ''
               }</h2>
@@ -65,7 +73,7 @@ export function seeMorebtn() {
         firstSpanMainTitle.textContent = createFirstPartTitle(data);
         secondSpanMainTitle.textContent = createLastPartTitle(data);
 
-        const bookCardItem = document.querySelectorAll('.book-card');
+        const bookCardItem = document.querySelectorAll('.books-list__item');
         bookCardItem.forEach(element => {
           element.addEventListener('click', renderModalWindow);
         });
