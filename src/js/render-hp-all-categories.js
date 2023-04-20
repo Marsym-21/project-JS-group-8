@@ -19,6 +19,7 @@ export function renderCategoryList() {
   const allCategor = document.createElement('li');
   allCategor.classList.add('category-link');
   allCategor.classList.add('all');
+  allCategor.classList.add('active');
   allCategor.textContent = 'All Categories';
   list.append(allCategor);
   let categoryArray = [];
