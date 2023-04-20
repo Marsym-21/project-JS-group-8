@@ -52,7 +52,7 @@ function getString(e) {
   categoryList.innerHTML = '';
   const data = e.target.innerHTML;
   if (!e.target.classList.contains('all')) {
-    categoryList.classList.add('test');
+    categoryList.classList.add('cards-markup');
   }
   // Добавляем класс "active" к нажатому элементу списка
   const activeItem = document.querySelector('.category-link.active');
@@ -74,6 +74,7 @@ function getString(e) {
         .map(
           book =>
             `<li class="book-card" id="${book._id}">
+            <div class="book-card_thumb">
               <img class="book-image" src="${book.book_image}" alt="${
               book.title
             }">
@@ -83,6 +84,7 @@ function getString(e) {
               <p class="book_author">${book.author.slice(0, 30)}${
               book.author.length > 30 ? '...' : ''
             }</p>
+            </div>
             </li>`
         )
         .join('');

@@ -1,5 +1,5 @@
 
-.categories-list.test {
+.categories-list.cards-markup {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -12,9 +12,19 @@
     padding-bottom: 100px;
     column-gap: 25px;
     row-gap: 40px;
+    justify-content: space-between;
+    padding-left: 32px;
+    padding-right: 32px;
     
   }
+  @media screen and (min-width: 1440px) {
+    column-gap: 24px;
+    padding-left: 0px;
+    padding-right: 24px;
+    row-gap: 40px;
+  }
 }
+
 
 .books {
   height: 472px;
@@ -39,11 +49,33 @@
   margin-bottom: 40px;
   margin-right: 20px;
   margin-left: 20px;
+
   @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+
+    width: calc((100% / 3) - 25px);
+
     padding-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  @media screen and (min-width: 1440px) {
+    width: calc((100% / 5) - 20px);
   }
 }
 
+.book-card_thumb {
+  @media screen and (min-width: 768px) {
+    min-width: 218px;
+    min-height: 316px;
+  }
+  @media screen and (min-width: 1440px) {
+  min-width: 180px;
+  min-height: 256px;
+  }
+}
 
 .book-image {
   width: 335px;
@@ -62,6 +94,12 @@
 }
 .main-title__first-part.dark {
   color: var(--body-black-firsttitle-color);
+}
+.right-bar .default__main-title {
+  @media screen and (max-width: 767px) {
+    margin-left: 20px;
+    text-align: left;
+  }
 }
 .book_name {
   font-family: 'DM Sans';
