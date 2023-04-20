@@ -1,5 +1,7 @@
 
+
 .categories-list.cards-markup {
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -15,7 +17,7 @@
     justify-content: space-between;
     padding-left: 32px;
     padding-right: 32px;
-    
+
   }
   @media screen and (min-width: 1440px) {
     column-gap: 24px;
@@ -66,6 +68,7 @@
   }
 }
 
+
 .book-card_thumb {
   @media screen and (min-width: 768px) {
     min-width: 218px;
@@ -109,11 +112,10 @@
   line-height: 18px;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: var(--body-black-firsttitle-color);
+  color: var(--body-white-firsttitle-color);
 
   margin-top: 14px;
   margin-bottom: 0;
-  
 }
 .book_name.dark {
   color: var(--body-black-firsttitle-color);
@@ -131,7 +133,6 @@
   margin-top: 4px;
   margin-bottom: 0;
 }
-
 
 .book-block {
   display: flex;

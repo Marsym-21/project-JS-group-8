@@ -166,6 +166,22 @@ export function renderBookInformation(id) {
         bodyModalOpen.classList.remove('modal-open');
         addButton.removeEventListener('click', addBtn);
       }
+
+      modalBackdrop.addEventListener('click', e => {
+        if (!e.target.classList.contains('modal-backdrop')) {
+          return;
+        }
+        closeBtn();
+      });
+      
+      window.addEventListener('keydown', e => {
+        if (e.code != 'Escape') {
+          return;
+        } else {
+          closeBtn();
+        }
+      });
+      
     })
     .catch(error => {
       console.log(error.message);
@@ -181,17 +197,3 @@ export function renderModalWindow(e) {
   renderBookInformation(data);
 }
 
-modalBackdrop.addEventListener('click', e => {
-  if (!e.target.classList.contains('modal-backdrop')) {
-    return;
-  }
-  closeBtn();
-});
-
-window.addEventListener('keydown', e => {
-  if (e.code != 'Escape') {
-    return;
-  } else {
-    closeBtn();
-  }
-});

@@ -12,6 +12,7 @@ export function getObject() {
     body: document.querySelector('body'),
     bookBlockContainer: document.querySelector('.book-block'),
     header: document.querySelector('.header_btn__shopping'),
+    headerLink: document.querySelector('.header_link__icon'),
     headerLogo: document.querySelector('.header_logo'),
     headerBody: document.querySelector('.header'),
     headerBtnActive: document.querySelector('.current_btn'),

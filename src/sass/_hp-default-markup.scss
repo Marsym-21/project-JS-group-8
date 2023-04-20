@@ -233,9 +233,12 @@
 
   text-transform: uppercase;
 }
-
+.books-list__item:hover {
+  cursor: pointer;
+}
 .books-list__item:hover .item__overlay {
   transform: translateY(0%);
+  cursor: pointer;
 }
 
 .item-title__wrap {

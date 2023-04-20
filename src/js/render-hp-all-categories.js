@@ -76,8 +76,14 @@ function getString(e) {
             `<li class="book-card" id="${book._id}">
             <div class="book-card_thumb">
               <img class="book-image" src="${book.book_image}" alt="${
+
               book.title
             }">
+            <div class="item__overlay">
+            
+                <p class="item__overlay-text">quick view</p>
+                </div>
+                </div>
               <h2 class="book_name">${book.title.slice(0, 20)}${
               book.title.length > 20 ? '...' : ''
             }</h2>
