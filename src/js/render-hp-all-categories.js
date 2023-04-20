@@ -4,6 +4,7 @@ import { createCategoryString } from './getCategoryString.js';
 import { createFirstPartTitle } from './getCategoryTitle.js';
 import { createLastPartTitle } from './getCategoryTitle.js';
 import { spinnerPlay, spinnerStop } from './spinner.js';
+import { renderModalWindow } from './modalWindow.js';
 spinnerPlay();
 window.addEventListener('load', () => {
   spinnerStop();
@@ -63,7 +64,7 @@ function getString(e) {
       categoryArray = books
         .map(
           book =>
-            `<li class="book-card">
+            `<li class="book-card" id="${book._id}">
               <img class="book-image" src="${book.book_image}" alt="${
               book.title
             }">
@@ -76,9 +77,14 @@ function getString(e) {
             </li>`
         )
         .join('');
-
+        
       categoryList.insertAdjacentHTML('beforeend', categoryArray);
 
+      const bookCardItem = document.querySelectorAll('.book-card');
+        bookCardItem.forEach(element => {
+          element.addEventListener('click', renderModalWindow);
+        });
+        
       const firstSpanMainTitle = document.querySelector(
         '.main-title__first-part'
       );
