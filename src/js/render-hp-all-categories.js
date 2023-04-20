@@ -31,13 +31,19 @@ export function renderCategoryList() {
       list.insertAdjacentHTML('beforeend', categoryArray);
       const categoryAll = document.querySelector('.all');
       categoryAll.addEventListener('click', renderCategoryPage);
+      getItemElement();
     })
     .catch(error => {
       console.log(error);
     });
 }
 
-list.addEventListener('click', getString);
+function getItemElement() {
+  const itemCategor = document.querySelectorAll('.category-link');
+  itemCategor.forEach(element => {
+    element.addEventListener('click', getString);
+  });
+}
 
 function getString(e) {
   spinnerPlay();
