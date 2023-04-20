@@ -51,7 +51,6 @@ function getString(e) {
   e.preventDefault();
   console.log(e.target.classList.contains('all'));
   categoryList.innerHTML = '';
-
   const data = e.target.innerHTML;
 
   // Добавляем класс "active" к нажатому элементу списка
@@ -62,8 +61,10 @@ function getString(e) {
   e.target.classList.add('active');
 
   const categoryString = createCategoryString(`${data}`);
-
+   
   let categoryArray = [];
+
+  const boxBooks
   const booksInform = new getBookData(0, categoryString);
   booksInform
     .getPromCategory()
