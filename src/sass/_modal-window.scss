@@ -9,7 +9,7 @@
   background-color: rgba(17, 17, 17, 0.4);
   -webkit-transition: opacity 300ms ease, visibility 300ms ease;
   transition: opacity 300ms ease, visibility 300ms ease;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 .modal-backdrop.is-hidden {
