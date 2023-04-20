@@ -5,6 +5,7 @@ import { createFirstPartTitle } from './getCategoryTitle.js';
 import { createLastPartTitle } from './getCategoryTitle.js';
 import { spinnerPlay, spinnerStop } from './spinner.js';
 import { renderModalWindow } from './modalWindow.js';
+import { getObjectCategory } from './toggle-theme.js';
 spinnerPlay();
 window.addEventListener('load', () => {
   spinnerStop();
@@ -77,14 +78,14 @@ function getString(e) {
             </li>`
         )
         .join('');
-        
+
       categoryList.insertAdjacentHTML('beforeend', categoryArray);
 
       const bookCardItem = document.querySelectorAll('.book-card');
-        bookCardItem.forEach(element => {
-          element.addEventListener('click', renderModalWindow);
-        });
-        
+      bookCardItem.forEach(element => {
+        element.addEventListener('click', renderModalWindow);
+      });
+
       const firstSpanMainTitle = document.querySelector(
         '.main-title__first-part'
       );
@@ -99,9 +100,11 @@ function getString(e) {
         firstSpanMainTitle.textContent = createFirstPartTitle(data);
         secondSpanMainTitle.textContent = createLastPartTitle(data);
       }
+      getObjectCategory();
     })
     .catch(error => {
       console.log(error);
     });
+
   spinnerStop();
 }
