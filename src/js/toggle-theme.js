@@ -11,6 +11,7 @@ export function getObject() {
   const ref = {
     body: document.querySelector('body'),
     header: document.querySelector('.header_btn__shopping'),
+    headerLogo: document.querySelector('.header_logo'),
     headerBody: document.querySelector('.header'),
     headerBtnActive: document.querySelector('.current_btn'),
     spanTitle: document.querySelector('.main-title__first-part'),
@@ -65,6 +66,7 @@ export function getObjectShop() {
   const ref = {
     body: document.querySelector('body'),
     header: document.querySelector('.header_btn__shopping'),
+    headerLogo: document.querySelector('.header_logo'),
     headerBody: document.querySelector('.header'),
     headerBtnHome: document.querySelector('.header_btn__home'),
     headerBtnActive: document.querySelector('.current_btn'),
