@@ -8,30 +8,37 @@
   border-radius: 0px 0px 8px 8px;
   position: fixed;
   top: 0;
-  margin-right: 0;
-  margin-left: 0;
-  justify-content: space-between;
   z-index: 1000;
   background: var(--header-white-background-color);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  margin: auto;
+
 }
 .header.dark {
   border: 1.5px solid var(--body-white-background-color);
   background: var(--header-black-background-color);
 }
 .header_container {
-  margin-right: 0;
-  margin-left: 0;
   padding-left: 23px;
   padding-right: 23px;
+  display: inline;
+  justify-content: center;
+  left: 50%;
   //tablet screen
   @media screen and (min-width: 768px) {
     padding-left: 32px;
     padding-right: 32px;
+    display: flex;
   }
   //desctop screen
   @media screen and (min-width: 1200px) {
     padding-left: 24px;
     padding-right: 24px;
+    max-width: 1440px;
+    display: flex;
   }
 }
 .nav {
@@ -45,29 +52,27 @@
     display: flex;
   }
 }
-.checkbox__header {
-  top: 30%;
-  position: relative;
-  left: 250px;
+.checkbox__header { 
+  display: flex;
+  margin-left: auto;
+  margin-right: 0px;
+  padding-top: 22px;
   //phone screen
   @media screen and (min-width: 480px) {
-    top: 30%;
-    position: relative;
-    left: 465px;
   }
+  padding-top: 22px;
+  margin-right: 0px;
   //tablet screen
   @media screen and (min-width: 768px) {
-    top: 0%;
-    display: flex;
-    left: auto;
-    right: auto;
+  margin-top: 0px;
+  margin-right: 0px;
+  padding-top: 0px;
   }
 }
 .header_main {
-  display: flex;
   justify-content: space-between;
-  margin-right: 0;
-  margin-left: 0;
+  width: 100%;
+  
 }
 
 .logo {
@@ -79,6 +84,17 @@
   fill: var(--header-white-background-color);
 }
 .header_logo_icon {
+  display: inline-flex;
+  list-style: none;
+  align-items: center;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-right: 200px;
+  //tablet screen
+  @media screen and (min-width: 768px) {
+  }
+  padding-right: 0;
   display: inline-flex;
   list-style: none;
   align-items: center;
@@ -107,17 +123,7 @@
   text-align: center;
   margin-left: 0;
   padding-left: 0;
-  //phone screen
-  @media screen and (min-width: 480px) {
-  }
-  //tablet screen
-  @media screen and (min-width: 768px) {
-    margin-right: 130px;
-  }
-  //desctop screen
-  @media screen and (min-width: 1200px) {
-    margin-right: 746px;
-  }
+
 }
 
 .header_btn__shopping {
@@ -211,6 +217,15 @@
 .header_nav {
   margin-left: 185px;
   padding-left: 0;
+  display: none;
+  //phone screen
+  @media screen and (min-width: 480px) {
+    display: none;
+  }
+  //tablet screen
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 }
 
 .header_logo {
@@ -290,7 +305,6 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-left: 0;
 }
 
 //menu
@@ -300,12 +314,10 @@
   align-items: center;
   text-align: center;
   margin-left: 0;
-  position: relative;
-  top: 50%;
-  transform: translate(0, 10);
+
 }
 .menu-close {
-  transform: translate(-33, 0);
+
 }
 .menu {
   display: flex;
