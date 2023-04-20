@@ -41,6 +41,7 @@ export function seeMorebtn() {
           .map(
             book =>
               `<li class="book-card" id="${book._id}">
+              <div class="book-card_thumb">
               <img class="book-image" src="${book.book_image}" alt="${
                 book.title
               }">
@@ -50,6 +51,7 @@ export function seeMorebtn() {
               <p class="book_author">${book.author.slice(0, 30)}${
                 book.author.length > 30 ? '...' : ''
               }</p>
+              </div>
             </li>`
           )
           .join('');
