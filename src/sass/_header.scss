@@ -173,6 +173,7 @@
   background-color: var(--header-black-text-svg-color);
   border: none;
   cursor: pointer;
+  margin-right: 24px;
 }
 
 .header_btn__home.dark {
@@ -337,9 +338,18 @@
   align-items: center;
   text-align: center;
   margin-left: 0;
+  margin-right: 27px;
 }
-/* .menu-close {
-} */
+.menu-close {
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  margin-left: 0;
+  z-index: 2;
+  position: absolute;
+
+} 
 .menu {
   display: flex;
   margin: auto 0;
@@ -542,24 +552,21 @@
   color: var(--book-black-description-text-color);
 }
 
+
 .menu_picture {
   display: flex;
-  margin-top: 126px;
+  justify-content: space-between;
+  height: 439px;
+  padding-left: 0;
+  margin: 0;
 }
 .menu_picture__png {
-  position: absolute;
-  justify-content: end;
-  align-items: flex-end;
   left: 0;
   right: 0;
-  transform: translateY(-87%);
+
   //tablet screen
   @media screen and (min-width: 480px) {
-    position: absolute;
-    justify-content: end;
-    align-items: flex-end;
     left: 0;
     right: 0;
-    transform: translateY(-87%);
   }
 }
