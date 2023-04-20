@@ -8,6 +8,7 @@ spinnerPlay();
 window.addEventListener('load', () => {
   spinnerStop();
 });
+const support = document.querySelector('.support');
 
 const booksInform = new getBookData();
 const firstSpanMainTitle = document.querySelector('.main-title__first-part');
@@ -20,6 +21,7 @@ const categoryList = document.querySelector('.categories-list');
 export function renderCategoryPage() {
   spinnerPlay();
   categoryList.classList.remove('cards-markup');
+  support.classList.remove('support_tablet');
 
   // Get reference to the ul element using its id
   firstSpanMainTitle.textContent = 'Best Sellers';

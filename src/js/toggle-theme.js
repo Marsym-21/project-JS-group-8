@@ -217,6 +217,7 @@ export function getObjectSeeMore() {
     checkbox.checked = true;
     ref.body.classList.add('dark');
     getArrayAddList(object);
+    bookName.forEach(element => element.classList.add('dark'));
   }
 
   checkbox.addEventListener('change', () => {

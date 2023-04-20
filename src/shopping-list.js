@@ -185,3 +185,7 @@ function remobeClassCurrent() {
   const btnShopping = document.querySelector('.header_btn__shopping');
   btnShopping.classList.add('current_btn');
 }
+
+const support = document.querySelector('.support');
+
+support.classList.add('support_tablet');
