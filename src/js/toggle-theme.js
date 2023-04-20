@@ -30,6 +30,7 @@ export function getObject() {
     headerCloseSvg: document.querySelector('.menu-togle-close'),
     bookBlockContainer: document.querySelector('.book-block'),
     modaWindow: document.querySelector('.modal-container'),
+    footer: document.querySelector('.footer'),
   };
   const seeMoreBtn = document.querySelectorAll('.btn-see-more');
   const bookName = document.querySelectorAll('.item__name');
@@ -87,6 +88,7 @@ export function getObjectShop() {
     headerMobileCurrent: document.querySelector('.current_btn_mobile'),
     headerCloseSvg: document.querySelector('.menu-togle-close'),
     title: document.querySelector('.shopingList_title--first'),
+    footer: document.querySelector('.footer'),
   };
 
   console.log(ref.title);
