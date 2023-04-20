@@ -171,7 +171,7 @@
   font-size: 16px;
   font-weight: 700;
   line-height: 1.12;
-  
+
   @media screen and (max-width: 767.99px) {
     width: 150px;
   }
@@ -265,6 +265,20 @@
   left: -1px;
   position: absolute;
   top: -1px;
+}
+.book-svg {
+  filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 1));
+}
+.book-svg.dark {
+  filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 1));
+}
+.black-book {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.black-book.dark {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
 
 // .............
