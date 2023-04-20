@@ -19,7 +19,8 @@ console.log(header);
 console.log(document);
 
 const logoPath = new URL('./images/icons.svg', import.meta.url);
-const emptyBook = new URL('./images/emptyBook.png', import.meta.url);
+const emptyBook = new URL('./images/img_emp@1x.png', import.meta.url);
+const emptyBookRetina = new URL('./images/img_emp@2x.png', import.meta.url);
 const shopingListEl = document.querySelector('.shopingList');
 
 const getLocal = localStorage.getItem('id');
@@ -59,15 +60,14 @@ function renderBook(localstorArr) {
             }
           }
 
-            function checkValue(value) {
-if (value !== '') {
-return value;
-} else {
-let message = 'No more information about this book';
-return message;
-}
-}
-
+          function checkValue(value) {
+            if (value !== '') {
+              return value;
+            } else {
+              let message = 'No more information about this book';
+              return message;
+            }
+          }
 
           return `
 <li class="shoppinglist_item data-id="${_id}">
@@ -161,6 +161,7 @@ function deleteBook(event) {
   <img 
     class="empty-book-page" 
     src="${emptyBook}" 
+    srcset="${emptyBook} 1x, ${emptyBookRetina} 2x"
     alt="The page is emrty" 
   />`;
       }
