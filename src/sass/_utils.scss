@@ -12,8 +12,29 @@ html {
 body {
   font-family: DM Sans;
   background-color: var(--body-white-background-color);
-  
+  overflow-y: scroll;
 }
+
+body::-webkit-scrollbar {
+  width: 16px;
+
+  background-color: var(--body-white-background-color);
+}
+
+body.dark,
+body.dark::-webkit-scrollbar {
+  background-color: var(--body-black-background-color);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+
+  border-radius: 12px;
+}
+body.dark::-webkit-scrollbar-thumb {
+  background: #111111;
+}
+
 body.modal-open {
   overflow: hidden;
 }
