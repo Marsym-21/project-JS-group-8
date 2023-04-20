@@ -8,7 +8,6 @@ export function getObject() {
   const ref = {
     body: document.querySelector('body'),
     header: document.querySelector('.header_btn__shopping'),
-<<<<<<< Updated upstream
     newElem: document.querySelector('.btn-see-more'),
     headerBody: document.querySelector('.header'),
     headerBtnActive: document.querySelector('.current_btn'),
@@ -23,7 +22,6 @@ export function getObject() {
     headerCloseSvg: document.querySelector('.menu-togle-close'),
     seeMoreBtn: document.querySelector('.btn-see-more'),
     bookBlockContainer: document.querySelector('.book-block'),
-=======
     // newElem: document.querySelector('#seemore__btn'),
 
     autorisationModal: document.querySelector('.modal'),
@@ -35,7 +33,6 @@ export function getObject() {
     autorisationPasswordSvG: document.querySelector('.password-img'),
     autorisationMailSvG: document.querySelector('.mail'),
     autorisationPlaceholder: document.querySelector('placeholder'),
->>>>>>> Stashed changes
   };
 
   const object = Object.keys(ref);

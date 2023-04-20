@@ -71,29 +71,6 @@ const validateSignUpInputs = () => {
 
 //---------------------------------------------//валідація інпутів SignIn//--------------------------------------------------//
 
-
-// const validateSignInInputs = () => {
-//   const emailValue = email.value.trim();
-//   const passwordValue = password.value.trim();
-
-
-//  if(emailValue === '') {
-//      Notify.warning('Email is required');
-//  } else if (!isValidEmail(emailValue)) {
-//      Notify.warning('Provide a valid email address!');
-//  } else {
-//      setSuccess(email);
-//  } 
-
-//  if(passwordValue === '') {
-//      Notify.warning('Password is required');
-// } else if ('' < passwordValue.lenght < 6 ) {
-//  Notify.warning('Password must be at least 6 characters!');
-// } else {
-//  setSuccess(password);
-// }
-// // console.log({ email: email.value, passwordValue: password.value }); 
-// };
 //---------------------------------------------//відкрити-закрити модалку //--------------------------------------------------//
 
 function toggleModal() {
@@ -159,6 +136,3 @@ refs.closeModalBtn.addEventListener("click", toggleModal);
 
 refs.bigButtonChangeName.addEventListener('click', regSignUp);
 
- //--------------------------------------------------//читання даних в localStorage//-------------------------------------//
-
-///...////
