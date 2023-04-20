@@ -14,14 +14,14 @@ form.addEventListener('submit', e => {
     regSignUp(e);
 });
 
-const setError = (element, message) => {
-    const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector('.error');
+// const setError = (element, message) => {
+//     const inputControl = element.parentElement;
+//     const errorDisplay = inputControl.querySelector('.error');
 
-    errorDisplay.innerText = message;
-    inputControl.classList.add('.error');
-    inputControl.classList.remove('.success');
-};
+//     errorDisplay.innerText = message;
+//     inputControl.classList.add('.error');
+//     inputControl.classList.remove('.success');
+// };
 
 const setSuccess = element => {
     const inputControl = element.parentElement;
@@ -37,8 +37,6 @@ const isValidEmail = email => {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
-
-//---------------------------------------------//валідація інпутів SignUp//--------------------------------------------------//
 
 const validateSignUpInputs = () => {
      const usernameValue = username.value.trim();
@@ -61,17 +59,12 @@ const validateSignUpInputs = () => {
 
     if(passwordValue === '') {
         Notify.warning('Password is required');
-} else if ('' < passwordValue.lenght < 6 ) {
+} else if (passwordValue.length < 6 ) {
     Notify.warning('Password must be at least 6 characters!');
 } else {
     setSuccess(password);
 }
-// console.log({ email: email.value, passwordValue: password.value }); 
 };
-
-//---------------------------------------------//валідація інпутів SignIn//--------------------------------------------------//
-
-//---------------------------------------------//відкрити-закрити модалку //--------------------------------------------------//
 
 function toggleModal() {
     refs.modal.classList.toggle("is-hidden");
@@ -106,22 +99,28 @@ refs.closeModalBtn.addEventListener("click", toggleModal);
    function regSignUp(e) {
 
     validateSignUpInputs();
-
+    localStorage.clear();
     //запис username
    let userNameLS = {username: username.value};
    let serialUserNameLS = JSON.stringify(userNameLS);
-   localStorage.setItem("KeyUserName", serialUserNameLS);
+   if (username.value) {
+   localStorage.setItem("KeyUserName", serialUserNameLS)};
 
     //запис e-mail
     let emailLS = {email: email.value};
+    console.log(email.value);
     let serialEmailLS = JSON.stringify(emailLS);
-    localStorage.setItem("KeyEmail", serialEmailLS);
-
+    if (email.value) {
+      localStorage.setItem("KeyEmail", serialEmailLS)};
+    
     //запис пароля
     let passwordLS = {password: password.value};
     let serialPasswordLS = JSON.stringify(passwordLS);
-    localStorage.setItem("KeyPass", serialPasswordLS);
-   
+    if (password.value.length >= 6 ) {
+      localStorage.setItem("KeyPass", serialPasswordLS);
+      // localStorage.clear();
+    };
+  
 
   let returnUserNameLS = JSON.parse(localStorage.getItem("KeyUserName"));
   console.log(returnUserNameLS);
@@ -135,4 +134,5 @@ refs.closeModalBtn.addEventListener("click", toggleModal);
 };
 
 refs.bigButtonChangeName.addEventListener('click', regSignUp);
+
 

@@ -27,6 +27,13 @@ export function getObject() {
     autorisationModal: document.querySelector('.modal'),
     autorisationBigButton: document.querySelector('.btnmodal__input-pass'),
     autorisationInput: document.querySelector('.input-control'),
+    autorisationEmail: document.querySelector('.email'),
+    autorisationPass: document.querySelector('.pass'),  
+    autorisationLabelEmail: document.querySelector('.label-email'),
+    autorisationLabelName: document.querySelector('.label-name'),
+    autorisationLabelPassword: document.querySelector('.label-password'),
+    autorisationBig: document.querySelector('.big'),
+
     autorisationModalButtonClose: document.querySelector('.modal__btn'),
     autorisationLittleButton: document.querySelector('.button-modal-approve'),
     autorisationCLoseSvG: document.querySelector('.close'),
