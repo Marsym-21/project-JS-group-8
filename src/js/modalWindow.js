@@ -66,17 +66,13 @@ export function renderBookInformation(id) {
       }
 
       modalContainer.innerHTML = `
-       <div class="modal-close__btn-wrapper">
+      
       <button type='button' class='modal-close-btn close'>
      <svg class="close-svg" fill="none" width="30" height="30">
-          <use href="${logoPath}#icon-x-close"></use>
+          <use href="${logoPath}#icon-close-black"></use>
 </svg>
-    
-       <path d="m8 8 14 14M8 22 22 8" stroke="#000" stroke-width="2" />
-   </svg>
       </button>
-      </div>
-      <div class ='modal-book'>
+         <div class ='modal-book'>
       <div class='modal-book__img-container'>
         <img class='modal-book__img' src=${checkValue(data.book_image)} 
         alt=${checkValue(data.title)}/>
@@ -111,7 +107,7 @@ export function renderBookInformation(id) {
    rel="noopener noreferrer"
    aria-label="Apple Book icon"
    >
-       <svg class="book-svg"  width="30" height="30" fill="none">
+       <svg class="book-svg yellow-book"  width="30" height="30" fill="none">
        <use href="${logoPath}#icon-apple-ibooks"></use> 
        </svg>
        </a>
@@ -138,7 +134,7 @@ export function renderBookInformation(id) {
         `;
 
       const closeButton = document.querySelector('.modal-close-btn');
-      console.log(closeButton);
+     
       closeButton.addEventListener('click', closeBtn);
 
       const addButton = document.querySelector('.modal-book__button');
@@ -162,7 +158,7 @@ export function renderBookInformation(id) {
       getObjectModal();
     })
     .catch(error => {
-      console.log(error);
+      console.log(error.message);
     });
   spinnerStop();
 }

@@ -2,6 +2,8 @@ import { createCategoryString } from './getCategoryString';
 import { getBookData } from './getBooksData';
 import { createFirstPartTitle } from './getCategoryTitle.js';
 import { createLastPartTitle } from './getCategoryTitle.js';
+import { renderModalWindow } from './modalWindow.js';
+import { getObjectSeeMore } from './toggle-theme.js';
 import { spinnerPlay, spinnerStop } from './spinner.js';
 spinnerPlay();
 window.addEventListener('load', () => {
@@ -38,7 +40,7 @@ export function seeMorebtn() {
         categoryArray = books
           .map(
             book =>
-              `<div class="book-card">
+              `<li class="book-card" id="${book._id}">
               <img class="book-image" src="${book.book_image}" alt="${
                 book.title
               }">
@@ -48,7 +50,7 @@ export function seeMorebtn() {
               <p class="book_author">${book.author.slice(0, 30)}${
                 book.author.length > 30 ? '...' : ''
               }</p>
-            </div>`
+            </li>`
           )
           .join('');
 
@@ -62,9 +64,15 @@ export function seeMorebtn() {
         );
         firstSpanMainTitle.textContent = createFirstPartTitle(data);
         secondSpanMainTitle.textContent = createLastPartTitle(data);
+
+        const bookCardItem = document.querySelectorAll('.book-card');
+        bookCardItem.forEach(element => {
+          element.addEventListener('click', renderModalWindow);
+        });
+        getObjectSeeMore();
       })
       .catch(error => {
-        console.log(error);
+        console.log(error.message);
       });
     spinnerStop();
   }
