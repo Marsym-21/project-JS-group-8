@@ -1,51 +1,53 @@
+@import './utils';
 .container_shopping-list {
   display: flex;
   gap: 40px;
   margin-top: 112px;
 }
 
-// .support > .shoppinglist_support--container {
-//   @media screen and (min-width: 1440px) {
-//     margin-left: 0;
-//     margin-right: 0;
-//   }
-// }
+.support > .shoppinglist_support--container {
+  @media screen and (min-width: 1440px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 
-// .shoppinglist_support {
-//   padding-top: 0;
-//   @media screen and (max-width: 1439px) {
-//     position: absolute;
-//     white-space: nowrap;
-//     width: 1px;
-//     height: 1px;
-//     overflow: hidden;
-//     border: 0;
-//     padding: 0;
-//     clip: rect(0 0 0 0);
-//     clip-path: inset(50%);
-//     margin: -1px;
-//   }
-// }
+.shoppinglist_support {
+  padding-top: 0;
+  @media screen and (max-width: 1439px) {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+  }
+}
 
-// .support_tablet {
-//   @media screen and (max-width: 1439px) {
-//     position: absolute;
-//     white-space: nowrap;
-//     width: 1px;
-//     height: 1px;
-//     overflow: hidden;
-//     border: 0;
-//     padding: 0;
-//     clip: rect(0 0 0 0);
-//     clip-path: inset(50%);
-//     margin: -1px;
-//   }
-//   padding-top: 0;
-// }
+.support_tablet {
+  @media screen and (max-width: 1439.99px) {
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+  }
+  padding-top: 0;
+  @media screen and(max-width: 1439.99px) {
+    display: none;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+  }
+}
 
 .shopingList_title {
-  font-family: 'DM Sans';
-  font-style: normal;
   font-weight: 700;
   font-size: 32px;
   line-height: 38px;
@@ -53,8 +55,8 @@
   letter-spacing: -0.04em;
   margin-top: 0;
   margin-bottom: 40px;
-  margin-left: 20px;
-  color: #111111;
+
+  color: var(--books-white-title-color);
 
   @media screen and (min-width: 768px) {
     font-weight: 700;
@@ -81,7 +83,7 @@
 }
 
 .shoppinglist_item {
-  border: 2px solid rgba(79, 46, 232, 0.4);
+  border: 2px solid var(--shoppinglist-border-color);
   border-radius: 16px;
   grid-template:
     'photo info info' min-content
@@ -162,17 +164,17 @@
   }
 }
 
-.shoppinglist_info {
+.shoppingList_info {
   grid-area: info;
 }
 
-.shoppinglist_title {
+.shoppingList_title {
   margin-top: 0;
   margin-bottom: 4px;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.12;
-  
+
   @media screen and (max-width: 767.99px) {
     width: 150px;
   }
@@ -249,9 +251,8 @@
 .shoppinglist_btn {
   width: 28px;
   height: 28px;
-  background-color: rgba(0, 0, 0, 0);
-  // background-image: url(icons.31d2e38d.svg#icon-dump);
   border-radius: 50%;
+  border-color: transparent;
   display: block;
   position: absolute;
   top: 14px;
@@ -266,8 +267,20 @@
   position: absolute;
   top: -1px;
 }
-
-// .............
+.book-svg {
+  filter: drop-shadow(0px 3px 3px var(--book-svg-color));
+}
+.book-svg.dark {
+  filter: drop-shadow(0px 3px 3px var(--book-svg-color));
+}
+.black-book {
+  background-color: var(--black-book-dark-color);
+  border-radius: 10px;
+}
+.black-book.dark {
+  background-color: var(--black-book-dark-color);
+  border-radius: 10px;
+}
 
 .empty-book-page {
   background-color: inherit;
@@ -284,9 +297,10 @@
 }
 
 .empty-book-text {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 55px;
+  margin-right: 55px;
   margin-bottom: 14px;
+  margin-top: 120px;
   max-width: 244px;
   font-weight: 400;
   font-size: 14px;
@@ -300,8 +314,11 @@
 
   // tablet screen
   @media screen and (min-width: 768px) {
+    margin-left: 190px;
+    margin-right: 190px;
+    margin-top: 140px;
     font-size: 18px;
-    max-width: 322px;
+    max-width: 349px;
     line-height: 1.33;
   }
 }
@@ -317,4 +334,7 @@
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   margin: -1px;
+}
+.shopingList_title--first.dark {
+  color: var(--body-black-firsttitle-color);
 }

@@ -1,3 +1,4 @@
+
 .categories-list.test {
   display: flex;
   flex-wrap: wrap;
@@ -14,6 +15,12 @@
     
   }
 }
+
+.books {
+  height: 472px;
+  margin-bottom: 86px;
+}
+
 .books_list {
   display: flex;
   flex-wrap: wrap;
@@ -101,7 +108,7 @@
   margin: 0;
   width: 327px;
   height: 228px;
-  
+
   @media screen and (min-width: 768px) {
     width: 329px;
     height: 472px;
@@ -113,15 +120,18 @@
 }
 
 .category-link {
-      font-size: 16px;
-      line-height: 1.125;
-      letter-spacing: -0.02em;
-      color: rgba(17, 17, 17, 0.6);
+  display: flex;
+  align-items: center;
+  height: 20px;
+  font-size: 16px;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.6);
 
-      @media screen and (min-width: 768px) {
-        font-size: 18px;
-        line-height: 1.33;
-      }
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 1.14;
+  }
 }
 
 .book-block.dark .book-categories .category-link {
@@ -140,21 +150,19 @@
   &:hover,
   &:focus,
   &.active {
-      font-weight: 700;
-      // font-size: 16px;
-      // line-height: 1.125;
-      font-size: 14px;
-      line-height: 1.14;
-      transition: all 0.2s ease;
-      text-transform: uppercase;
-      color: var(--categoris-white-focus-color);
-     
+    font-weight: 700;
+    line-height: 1.14;
+    transition: text-transform 0.2s ease;
+    text-transform: uppercase;
+    color: var(--categoris-white-focus-color);
+    cursor: pointer;
+
     @media screen and (min-width: 768px) {
       font-weight: 700;
-      // font-size: 18px;
+      font-size: 18px;
       // line-height: 1.33;
       font-size: 14px;
-      line-height: 1.0;
+      line-height: 1.14;
     }
   }
 }
@@ -163,9 +171,9 @@
   &:hover,
   &:focus,
   &.active {
-      color: var(--categoris-black-focus-color);
-      transition-duration: var(--duration);
-}
+    color: var(--categoris-black-focus-color);
+    transition-duration: var(--duration);
+  }
 }
 
 .books {
@@ -188,7 +196,6 @@
 
 .book-container {
   margin-right: 0;
-
 
   @media screen and (min-width: 1440px) {
     margin-left: 40px;
@@ -221,7 +228,7 @@
 
 .book-block.dark,
 .book-block.dark::-webkit-scrollbar {
-   background-color: var(--body-black-background-color);
+  background-color: var(--body-black-background-color);
 }
 
 .book-block::-webkit-scrollbar-thumb {
@@ -234,7 +241,7 @@
 
 .book-block::-webkit-scrollbar-thumb {
   background: #e0e0e0;
- 
+
   border-radius: 12px;
 }
 .book-block.dark::-webkit-scrollbar-thumb {

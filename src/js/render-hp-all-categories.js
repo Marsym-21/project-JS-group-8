@@ -4,6 +4,8 @@ import { createCategoryString } from './getCategoryString.js';
 import { createFirstPartTitle } from './getCategoryTitle.js';
 import { createLastPartTitle } from './getCategoryTitle.js';
 import { spinnerPlay, spinnerStop } from './spinner.js';
+import { renderModalWindow } from './modalWindow.js';
+import { getObjectCategory } from './toggle-theme.js';
 spinnerPlay();
 window.addEventListener('load', () => {
   spinnerStop();
@@ -17,6 +19,7 @@ export function renderCategoryList() {
   const allCategor = document.createElement('li');
   allCategor.classList.add('category-link');
   allCategor.classList.add('all');
+  allCategor.classList.add('active');
   allCategor.textContent = 'All Categories';
   list.append(allCategor);
   let categoryArray = [];
@@ -29,20 +32,24 @@ export function renderCategoryList() {
       list.insertAdjacentHTML('beforeend', categoryArray);
       const categoryAll = document.querySelector('.all');
       categoryAll.addEventListener('click', renderCategoryPage);
+      getItemElement();
     })
     .catch(error => {
-      console.log(error);
+      console.log(error.message);
     });
 }
 
-list.addEventListener('click', getString);
+function getItemElement() {
+  const itemCategor = document.querySelectorAll('.category-link');
+  itemCategor.forEach(element => {
+    element.addEventListener('click', getString);
+  });
+}
 
 function getString(e) {
   spinnerPlay();
   e.preventDefault();
-  console.log(e.target.classList.contains('all'));
   categoryList.innerHTML = '';
-
   const data = e.target.innerHTML;
   if (!e.target.classList.contains('all')) {
     categoryList.classList.add('test');
@@ -57,6 +64,7 @@ function getString(e) {
   const categoryString = createCategoryString(`${data}`);
 
   let categoryArray = [];
+
   const booksInform = new getBookData(0, categoryString);
   booksInform
     .getPromCategory()
@@ -65,7 +73,7 @@ function getString(e) {
       categoryArray = books
         .map(
           book =>
-            `<li class="book-card">
+            `<li class="book-card" id="${book._id}">
               <img class="book-image" src="${book.book_image}" alt="${
               book.title
             }">
@@ -81,6 +89,11 @@ function getString(e) {
 
       categoryList.insertAdjacentHTML('beforeend', categoryArray);
 
+      const bookCardItem = document.querySelectorAll('.book-card');
+      bookCardItem.forEach(element => {
+        element.addEventListener('click', renderModalWindow);
+      });
+
       const firstSpanMainTitle = document.querySelector(
         '.main-title__first-part'
       );
@@ -95,9 +108,11 @@ function getString(e) {
         firstSpanMainTitle.textContent = createFirstPartTitle(data);
         secondSpanMainTitle.textContent = createLastPartTitle(data);
       }
+      getObjectCategory();
     })
     .catch(error => {
-      console.log(error);
+      console.log(error.message);
     });
+
   spinnerStop();
 }

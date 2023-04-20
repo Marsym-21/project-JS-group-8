@@ -21,6 +21,7 @@ export function renderCategoryPage() {
   spinnerPlay();
   categoryList.classList.remove('test');
 
+
   // Get reference to the ul element using its id
   firstSpanMainTitle.textContent = 'Best Sellers';
   secondSpanMainTitle.textContent = 'Books';
@@ -97,9 +98,8 @@ export function renderCategoryPage() {
 
       renderCategoryList();
       seeMorebtn();
-
-      const wrapFunction = document.querySelectorAll('.item-wrap');
-      wrapFunction.forEach(element => {
+      const wrapElement = document.querySelectorAll('.item-wrap');
+      wrapElement.forEach(element => {
         element.addEventListener('click', renderModalWindow);
       });
       getObject();
