@@ -1,7 +1,6 @@
 import './js/support.js';
 import './js/header-theme.js';
 import './js/toggle-theme.js';
-// import './js/mobile-menu.js';
 import './js/spinner.js';
 import './js/header-mobile.js';
 import './js/toggle-theme.js';
@@ -184,6 +183,10 @@ function remobeClassCurrent() {
   btnHome.classList.remove('current_btn');
   const btnShopping = document.querySelector('.header_btn__shopping');
   btnShopping.classList.add('current_btn');
+  const btnHomeMob = document.querySelector('.current_btn_mobile');
+  btnHomeMob.classList.remove('current_btn');
+  const btnShoppMob = document.querySelector('.header_mobile_shopping');
+  btnShoppMob.classList.add('current_btn');
 }
 
 const support = document.querySelector('.support');
