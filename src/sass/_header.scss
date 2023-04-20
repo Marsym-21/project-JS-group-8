@@ -58,17 +58,13 @@
   margin-right: 0px;
   padding-top: 22px;
   //phone screen
-  @media screen and (min-width: 480px) {
-  }
+  @media screen and (min-width: 480px) {}
   padding-top: 22px;
   margin-right: 0px;
   //tablet screen
-  @media screen and (min-width: 768px) {
-  margin-top: 0px;
+  @media screen and (min-width: 768px) {  margin-top: 0px;
   margin-right: 0px;
-  padding-top: 0px;
-  }
-}
+  padding-top: 0px; }}
 .header_main {
   justify-content: space-between;
   width: 100%;
@@ -159,7 +155,6 @@
   color: var(--header-white-background-color);
   background-color: var(--header-black-background-color);
 }
-
 .header_btn__home {
   font-weight: 500;
   font-size: 14px;
@@ -170,10 +165,10 @@
   text-decoration: none;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  border-radius: 36px;
   background-color: var(--header-black-text-svg-color);
   border: none;
-  margin-right: 24px;
+  cursor: pointer;
 }
 
 .header_btn__home.dark {
@@ -208,8 +203,27 @@
   padding: 8px 16px;
   border-radius: 36px;
   border: none;
+  margin-right: 16px;
 }
 .current_btn.dark,
+.current_btn_shopping.dark {
+  background-color: var(--header-left-btn-focus-color);
+  color: var(--header-white-background-color);
+}
+.current_btn_shopping  {
+  background-color: var(--header-left-btn-focus-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px 16px;
+  border-radius: 36px;
+  border: none;
+  margin-left: 16px;
+}
 .current_btn_shopping.dark {
   background-color: var(--header-left-btn-focus-color);
   color: var(--header-white-background-color);
@@ -227,7 +241,6 @@
     display: flex;
   }
 }
-
 .header_logo {
   justify-content: flex-start;
   align-items: center;
@@ -252,7 +265,7 @@
     display: flex;
     text-align: right;
     justify-content: flex-end;
-    margin-left: 24px;
+    margin-left: 32px;
     width: 184px;
     height: 45px;
     background: var(--header-right-btn-color);
@@ -303,10 +316,9 @@
 }
 .header_personal {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 }
-
 //menu
 .menu-header {
   display: inline-flex;
@@ -538,3 +550,4 @@ transform: translateY(-87%);
   transform: translateY(-87%) 
 }
 }
+
