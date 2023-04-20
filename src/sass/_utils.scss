@@ -12,6 +12,7 @@ html {
 body {
   font-family: DM Sans;
   background-color: var(--body-white-background-color);
+  overflow: hidden;
 }
 
 body.dark {
