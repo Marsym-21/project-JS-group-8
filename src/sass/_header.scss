@@ -3,7 +3,7 @@
 }
 .header {
   width: 100%;
-  height: 72px;
+  height: 64px;
   border: 1.5px solid var(--body-white-firsttitle-color);
   border-radius: 0px 0px 8px 8px;
   position: fixed;
@@ -15,6 +15,9 @@
   align-content: center;
   text-align: center;
   margin: auto;
+  @media screen and (min-width: 768px) {
+    height: 72px;
+  }
 }
 .header.dark {
   border: 1.5px solid var(--body-white-background-color);
@@ -404,13 +407,12 @@
   flex-direction: column;
   width: 100vw;
   height: 100vh;
-  padding: 32px;
   background: radial-gradient(
     183.6% 183.01% at 59.76% -23.42%,
     #4f2ee8 18.03%,
     #ffffff 100%
   );
-  z-index: 999;
+  z-index: 1;
   transform: translateX(100%);
   transition: transform 250ms ease-in-out;
 
