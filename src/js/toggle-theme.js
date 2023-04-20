@@ -13,6 +13,7 @@ export function getObject() {
     header: document.querySelector('.header_btn__shopping'),
     headerBody: document.querySelector('.header'),
     headerBtnActive: document.querySelector('.current_btn'),
+    spanTitle: document.querySelector('.main-title__first-part'),
     // headerShopActive: document.querySelector('.current_btn_shopping'),
     headerBtnToogle: document.querySelector('.menu-togle-svg'),
     headerMenuContainer: document.querySelector('.menu-container'),

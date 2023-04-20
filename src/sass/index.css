@@ -1255,23 +1255,40 @@ img {
   font-size: 48px;
   line-height: 1.1;
   letter-spacing: -0.04em;
-  margin-top: 40px;
-  margin-left: 40px;
-  margin-bottom: 40px;
+}
+@media screen and (min-width: 1440px) {
+  .default__main-title {
+    margin-top: 0px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+  }
 }
 
 .main-title__first-part {
   color: #111111;
 }
 
+.main-title__first-part.dark {
+  color: var(--body-black-firsttitle-color);
+}
+
 .main-title__second-part {
   color: #4f2ee8;
+}
+
+.books-list {
+  display: block;
+}
+
+.categories-list__item {
+  display: block;
 }
 
 .categories-list__wrap {
   outline: 2px solid red;
   outline-offset: -2px;
   margin-bottom: 40px;
+  display: inline-block;
 }
 
 /*-----------------
@@ -1293,9 +1310,6 @@ img {
     display: -ms-flexbox;
     display: flex;
     gap: 24px;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
 }
 @media screen and (min-width: 1440px) {
@@ -1314,6 +1328,11 @@ img {
 /*------
   card 
 ------*/
+.item-wrap {
+  outline: 2px solid red;
+  outline-offset: -2px;
+}
+
 .item-img__wrap {
   outline: 2px solid red;
   outline-offset: -2px;
@@ -1816,19 +1835,18 @@ img {
 }
 
 .shopingList_title {
-  font-family: "DM Sans";
-  font-style: normal;
   font-weight: 700;
   font-size: 32px;
   line-height: 38px;
   letter-spacing: -0.04em;
   margin-top: 0;
   margin-bottom: 40px;
-  margin-left: 20px;
+  margin-left: 75px;
   color: #111111;
 }
 @media screen and (min-width: 768px) {
   .shopingList_title {
+    margin-left: 200px;
     font-weight: 700;
     font-size: 48px;
     line-height: 52px;
@@ -1937,16 +1955,21 @@ img {
   }
 }
 
-.shoppinglist_info {
+.shoppingList_info {
   grid-area: info;
 }
 
-.shoppinglist_title {
+.shoppingList_title {
   margin-top: 0;
   margin-bottom: 4px;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.12;
+}
+@media screen and (max-width: 767.99px) {
+  .shoppingList_title {
+    width: 150px;
+  }
 }
 
 .shoppinglist_category {
@@ -2037,6 +2060,7 @@ img {
   height: 28px;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 50%;
+  border-color: transparent;
   display: block;
   position: absolute;
   top: 14px;
@@ -2067,8 +2091,8 @@ img {
 }
 
 .empty-book-text {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 55px;
+  margin-right: 55px;
   margin-bottom: 14px;
   max-width: 244px;
   font-weight: 400;
@@ -2081,6 +2105,8 @@ img {
 }
 @media screen and (min-width: 768px) {
   .empty-book-text {
+    margin-left: 223px;
+    margin-right: 223px;
     font-size: 18px;
     max-width: 322px;
     line-height: 1.33;
