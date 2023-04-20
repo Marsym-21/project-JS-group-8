@@ -162,7 +162,7 @@ export function renderBookInformation(id) {
       getObjectModal();
     })
     .catch(error => {
-      console.log(error);
+      console.log(error.message);
     });
   spinnerStop();
 }

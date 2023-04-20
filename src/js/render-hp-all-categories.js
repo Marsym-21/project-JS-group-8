@@ -34,7 +34,7 @@ export function renderCategoryList() {
       getItemElement();
     })
     .catch(error => {
-      console.log(error);
+      console.log(error.message);
     });
 }
 
@@ -109,7 +109,7 @@ function getString(e) {
       getObjectCategory();
     })
     .catch(error => {
-      console.log(error);
+      console.log(error.message);
     });
 
   spinnerStop();
