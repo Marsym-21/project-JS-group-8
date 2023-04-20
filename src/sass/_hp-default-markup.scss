@@ -35,22 +35,25 @@
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 32px;
   line-height: 1.1;
+  margin-left: 20px;
+  margin-top: 0;
 
   letter-spacing: -0.04em;
 
 
 // tablet screen
   @media screen and (min-width: 768px) {
-    //
+    font-size: 48px;
+    margin-left: 32px;
     //
   }
   
   // desktop screen
   @media screen and (min-width: 1440px) {
     margin-top: 0px;
-    margin-left: 40px;
+    margin-left: 0px;
     margin-bottom: 40px;
   }
 }

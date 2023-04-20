@@ -4,44 +4,44 @@
   margin-top: 112px;
 }
 
-.support > .shoppinglist_support--container {
-  @media screen and (min-width: 1440px) {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
+// .support > .shoppinglist_support--container {
+//   @media screen and (min-width: 1440px) {
+//     margin-left: 0;
+//     margin-right: 0;
+//   }
+// }
 
-.shoppinglist_support {
-  padding-top: 0;
-  @media screen and (max-width: 1439px) {
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    border: 0;
-    padding: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    margin: -1px;
-  }
-}
+// .shoppinglist_support {
+//   padding-top: 0;
+//   @media screen and (max-width: 1439px) {
+//     position: absolute;
+//     white-space: nowrap;
+//     width: 1px;
+//     height: 1px;
+//     overflow: hidden;
+//     border: 0;
+//     padding: 0;
+//     clip: rect(0 0 0 0);
+//     clip-path: inset(50%);
+//     margin: -1px;
+//   }
+// }
 
-.support_tablet {
-  @media screen and (max-width: 1439px) {
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    border: 0;
-    padding: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    margin: -1px;
-  }
-  padding-top: 0;
-}
+// .support_tablet {
+//   @media screen and (max-width: 1439px) {
+//     position: absolute;
+//     white-space: nowrap;
+//     width: 1px;
+//     height: 1px;
+//     overflow: hidden;
+//     border: 0;
+//     padding: 0;
+//     clip: rect(0 0 0 0);
+//     clip-path: inset(50%);
+//     margin: -1px;
+//   }
+//   padding-top: 0;
+// }
 
 .shopingList_title {
   font-family: 'DM Sans';

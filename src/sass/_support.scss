@@ -1,6 +1,13 @@
 .support {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 40px;
+  padding-bottom: 0;
+  @media screen and (min-width: 768px) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  @media screen and (min-width: 1440px) {
+    padding-top: 86px;
+  }
 }
 
 .support > .support-container {
