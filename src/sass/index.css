@@ -2473,6 +2473,10 @@ img {
   }
 }
 
+.shoppingList {
+  z-index: 1;
+}
+
 .shoppingList_info {
   grid-area: info;
 }
