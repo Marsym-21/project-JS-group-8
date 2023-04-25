@@ -3,7 +3,7 @@
   type="button">BUTTON</button> -->
     <div class="backdrop" id="data-modal">
         <div class="modal ">
-          <form id="form" action="/" >
+          <form id="form" action="/" autocomplete="off">
           <button type="button" class="modal__btn " id="data-modal-close">
             <svg class="close " >
               <use xlink:href="./images/project-icon.svg#icon-x-close"></use>
@@ -25,7 +25,9 @@
           <input class="modal__input label-email"
           id="email" 
           placeholder="EMAIL" 
-          name="email" type="email">
+          name="email" 
+          type="email"
+          required>
           <svg class="mail " width="28" height="28">
             <use xlink:href="./images/project-icon.svg#icon-mail"></use>
             </svg></div>
@@ -38,7 +40,8 @@
           id="password" 
           placeholder="PASSWORD" 
           name="password" 
-          type="text">
+          type="text"
+          required>
             <svg class="password-img " >
               <use xlink:href="./images/project-icon.svg#icon-lock"></use>
             </svg></div>
