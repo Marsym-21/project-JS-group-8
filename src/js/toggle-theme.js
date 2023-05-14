@@ -27,6 +27,24 @@ export function getObject() {
     headerMobileCurrent: document.querySelector('.current_btn_mobile'),
     headerCloseSvg: document.querySelector('.menu-togle-close'),
     bookBlockContainer: document.querySelector('.book-block'),
+    // newElem: document.querySelector('#seemore__btn'),
+
+    autorisationModal: document.querySelector('.modal'),
+    autorisationBigButton: document.querySelector('.btnmodal__input-pass'),
+    autorisationInput: document.querySelector('.input-control'),
+    autorisationEmail: document.querySelector('.email'),
+    autorisationPass: document.querySelector('.pass'),
+    autorisationLabelEmail: document.querySelector('.label-email'),
+    autorisationLabelName: document.querySelector('.label-name'),
+    autorisationLabelPassword: document.querySelector('.label-password'),
+    autorisationBig: document.querySelector('.big'),
+
+    autorisationModalButtonClose: document.querySelector('.modal__btn'),
+    autorisationLittleButton: document.querySelector('.button-modal-approve'),
+    autorisationCLoseSvG: document.querySelector('.close'),
+    autorisationPasswordSvG: document.querySelector('.password-img'),
+    autorisationMailSvG: document.querySelector('.mail'),
+    // autorisationPlaceholder: document.getElementById('#placeholder'),
     headerCloseSvg: document.querySelector('.menu-togle-close'),
     bookBlockContainer: document.querySelector('.book-block'),
     modaWindow: document.querySelector('.modal-container'),
@@ -37,6 +55,7 @@ export function getObject() {
   console.log(bookName);
 
   const object = Object.keys(ref);
+  console.log(ref);
 
   const checkbox = document.getElementById('theme-checkbox');
   if (localStorage.getItem('theme') === 'dark') {
