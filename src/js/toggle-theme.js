@@ -44,7 +44,7 @@ export function getObject() {
     autorisationCLoseSvG: document.querySelector('.close'),
     autorisationPasswordSvG: document.querySelector('.password-img'),
     autorisationMailSvG: document.querySelector('.mail'),
-    autorisationPlaceholder: document.getElementById('#placeholder'),
+    // autorisationPlaceholder: document.getElementById('#placeholder'),
     headerCloseSvg: document.querySelector('.menu-togle-close'),
     bookBlockContainer: document.querySelector('.book-block'),
     modaWindow: document.querySelector('.modal-container'),
@@ -55,6 +55,7 @@ export function getObject() {
   console.log(bookName);
 
   const object = Object.keys(ref);
+  console.log(ref);
 
   const checkbox = document.getElementById('theme-checkbox');
   if (localStorage.getItem('theme') === 'dark') {
