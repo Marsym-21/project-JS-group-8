@@ -13,7 +13,6 @@ form.addEventListener('submit', e => {
     regSignUp(e);
 });
 
-
 const setSuccess = element => {
     const inputControl = element.parentElement;
     const errorDisplay = inputControl.querySelector('.error');
