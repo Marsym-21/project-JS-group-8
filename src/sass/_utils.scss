@@ -12,8 +12,32 @@ html {
 body {
   font-family: DM Sans;
   background-color: var(--body-white-background-color);
+  overflow-y: scroll;
 }
 
+body::-webkit-scrollbar {
+  width: 16px;
+
+  background-color: var(--body-white-background-color);
+}
+
+body.dark,
+body.dark::-webkit-scrollbar {
+  background-color: var(--body-black-background-color);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+
+  border-radius: 12px;
+}
+body.dark::-webkit-scrollbar-thumb {
+  background: #111111;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
 body.dark {
   background-color: var(--body-black-background-color);
   color: var(--book-black-description-text-color);
@@ -61,6 +85,8 @@ img {
   --book-black-description-text-color: #ffffff;
   --book-dump-svg-color: #ffffff;
   --book-dump-svg-background-color: #4f2ee8;
+  --book-svg-color: rgba(255, 255, 255, 1);
+  --black-book-dark-color: rgba(255, 255, 255, 0.1);
   --logout-btn: 1.5px solid #111111;
   --logout-btn-background-color: #ffffff;
   --logout-btn-color-text: #111111;
@@ -70,6 +96,9 @@ img {
   --seemore-btn-color-focus: #ffffff;
   --seemore-btn-hover-background-color: #4f2ee8;
   --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --shoppinglist-border-color: rgba(79, 46, 232, 0.4);
+  --spinner-background-color: #bebebe79;
+  --preloader-box-shadow-color: #babecc;
   --duration: 250ms;
   --font-style-bold: Bold;
   --font-style-medium: Medium;
@@ -121,5 +150,3 @@ img {
     padding-right: 24px;
   }
 }
-
-

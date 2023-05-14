@@ -1,23 +1,33 @@
 import './js/support.js';
 import './js/header-theme.js';
 import './js/toggle-theme.js';
-// import './js/mobile-menu.js';
 import './js/spinner.js';
 import './js/header-mobile.js';
 import './js/toggle-theme.js';
+import { getBookData } from '../src/js/getBooksData.js';
 import { spinnerPlay, spinnerStop } from './js/spinner.js';
+import { getObjectShop } from './js/toggle-theme.js';
+remobeClassCurrent();
+
 spinnerPlay();
 window.addEventListener('load', () => {
   spinnerStop();
 });
 
-import { getBookData } from '../src/js/getBooksData.js';
+const header = document.querySelector('.header_btn__shopping');
+console.log(header);
+console.log(document);
+
 const logoPath = new URL('./images/icons.svg', import.meta.url);
-const emptyBook = new URL('./images/emptyBook.png', import.meta.url);
+const emptyBook = new URL('./images/img_emp@1x.png', import.meta.url);
+const emptyBookRetina = new URL('./images/img_emp@2x.png', import.meta.url);
 const shopingListEl = document.querySelector('.shopingList');
 
 const getLocal = localStorage.getItem('id');
 let parseLokalstorageQ = JSON.parse(getLocal);
+if (parseLokalstorageQ.length === 0) {
+  addPictureEmpty();
+}
 
 shopingListEl.addEventListener('click', deleteBook);
 
@@ -25,8 +35,6 @@ const getLocalstorages = localStorage.getItem('id');
 
 let arrey = localStorage.getItem('id');
 let parceArrey = JSON.parse(arrey);
-console.log(parceArrey.length);
-
 
 function renderBook(localstorArr) {
   localstorArr.map(id => {
@@ -54,6 +62,16 @@ function renderBook(localstorArr) {
               }
             }
           }
+
+          function checkValue(value) {
+            if (value !== '') {
+              return value;
+            } else {
+              let message = 'No more information about this book';
+              return message;
+            }
+          }
+
           return `
 <li class="shoppinglist_item data-id="${_id}">
     <div class="shoppinglist_img-container">
@@ -71,7 +89,7 @@ function renderBook(localstorArr) {
             <a href="${links(
               'Amazon'
             )}" target="_blank" rel="noopener noreferrer">
-                <svg fill="none" width="55" height="60">
+                <svg class="book-svg" fill="none" width="55" height="60">
                         <use href="${logoPath}#icon-amazon-ar21"></use>
                     </svg>
             </a>
@@ -80,7 +98,7 @@ function renderBook(localstorArr) {
             <a href="${links(
               'Apple Books'
             )}" target="_blank" rel="noopener noreferrer">
-                <svg width="28" height="27" fill="none">
+                <svg class="book-svg" width="28" height="27" fill="none">
                         <use href="${logoPath}#icon-apple-ibooks"></use>
                     </svg>
             </a>
@@ -89,14 +107,14 @@ function renderBook(localstorArr) {
             <a href="${links(
               'Bookshop'
             )}" target="_blank" rel="noopener noreferrer">
-                <svg width="32" height="32">
+                <svg class="black-book" width="32" height="32">
                         <use href="${logoPath}#icon-14008711"></use>
                     </svg>
             </a>
         </li>
     </ul>
     <p class="shoppinglist_desc">
-        ${description}
+    ${checkValue(description)}
     </p>
     <p class="shoppinglist_author">${author}</p>
     <button class="shoppinglist_btn type="button">
@@ -140,17 +158,37 @@ function deleteBook(event) {
       renderBook(newRender);
       if (parceArrey.length < 1) {
         shopingListEl.innerHTML = '';
-        shopingListEl.innerHTML = `<p class="empty-book-text"> 
+        addPictureEmpty();
+      }
+    }
+  }
+}
+
+getObjectShop();
+
+function addPictureEmpty() {
+  shopingListEl.innerHTML = `<p class="empty-book-text"> 
     This page is empty, add some books and proceed to order. 
   </p> 
   <img 
     class="empty-book-page" 
     src="${emptyBook}" 
+    srcset="${emptyBook} 1x, ${emptyBookRetina} 2x"
     alt="The page is emrty" 
   />`;
-      }
-    }
-
-  }
-
 }
+
+function remobeClassCurrent() {
+  const btnHome = document.querySelector('.header_btn__home');
+  btnHome.classList.remove('current_btn');
+  const btnShopping = document.querySelector('.header_btn__shopping');
+  btnShopping.classList.add('current_btn');
+  const btnHomeMob = document.querySelector('.current_btn_mobile');
+  btnHomeMob.classList.remove('current_btn');
+  const btnShoppMob = document.querySelector('.header_mobile_shopping');
+  btnShoppMob.classList.add('current_btn');
+}
+
+const support = document.querySelector('.support');
+
+support.classList.add('support_tablet');

@@ -1,3 +1,32 @@
+.categories-list.cards-markup {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 0;
+  padding-bottom: 80px;
+  margin-top: 0;
+  margin-bottom: 0;
+  @media screen and (min-width: 768px) {
+    margin-top: 0;
+    padding-bottom: 100px;
+    column-gap: 25px;
+    row-gap: 40px;
+    justify-content: space-between;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  @media screen and (min-width: 1440px) {
+    column-gap: 24px;
+    padding-left: 0px;
+    padding-right: 24px;
+    row-gap: 40px;
+  }
+}
+
+.books {
+  height: 472px;
+}
+
 .books_list {
   display: flex;
   flex-wrap: wrap;
@@ -9,6 +38,38 @@
 
   @media screen and (min-width: 1440px) {
     gap: 24px;
+  }
+}
+
+.book-card {
+  margin-bottom: 40px;
+  margin-right: 20px;
+  margin-left: 20px;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+
+    width: calc((100% / 3) - 25px);
+
+    padding-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  @media screen and (min-width: 1440px) {
+    width: calc((100% / 5) - 20px);
+  }
+}
+
+.book-card_thumb {
+  @media screen and (min-width: 768px) {
+    min-width: 218px;
+    min-height: 316px;
+  }
+  @media screen and (min-width: 1440px) {
+    min-width: 180px;
+    min-height: 256px;
   }
 }
 
@@ -27,7 +88,15 @@
     height: 256px;
   }
 }
-
+.main-title__first-part.dark {
+  color: var(--body-black-firsttitle-color);
+}
+.right-bar .default__main-title {
+  @media screen and (max-width: 767px) {
+    margin-left: 20px;
+    text-align: left;
+  }
+}
 .book_name {
   font-family: 'DM Sans';
   font-style: normal;
@@ -36,7 +105,13 @@
   line-height: 18px;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: #111111;
+  color: var(--body-white-firsttitle-color);
+
+  margin-top: 14px;
+  margin-bottom: 0;
+}
+.book_name.dark {
+  color: var(--body-black-firsttitle-color);
 }
 
 .book_author {
@@ -47,6 +122,9 @@
   line-height: 14px;
   letter-spacing: -0.04em;
   color: #b4afaf;
+
+  margin-top: 4px;
+  margin-bottom: 0;
 }
 
 .book-block {
@@ -62,7 +140,7 @@
   margin: 0;
   width: 327px;
   height: 228px;
-  
+
   @media screen and (min-width: 768px) {
     width: 329px;
     height: 472px;
@@ -74,15 +152,18 @@
 }
 
 .category-link {
-      font-size: 16px;
-      line-height: 1.125;
-      letter-spacing: -0.02em;
-      color: rgba(17, 17, 17, 0.6);
+  display: flex;
+  align-items: center;
+  height: 20px;
+  font-size: 16px;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.6);
 
-      @media screen and (min-width: 768px) {
-        font-size: 18px;
-        line-height: 1.33;
-      }
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 1.14;
+  }
 }
 
 .book-block.dark .book-categories .category-link {
@@ -101,21 +182,19 @@
   &:hover,
   &:focus,
   &.active {
-      font-weight: 700;
-      // font-size: 16px;
-      // line-height: 1.125;
-      font-size: 14px;
-      line-height: 1.14;
-      transition: all 0.2s ease;
-      text-transform: uppercase;
-      color: var(--categoris-white-focus-color);
-     
+    font-weight: 700;
+    line-height: 1.14;
+    transition: text-transform 0.2s ease;
+    text-transform: uppercase;
+    color: var(--categoris-white-focus-color);
+    cursor: pointer;
+
     @media screen and (min-width: 768px) {
       font-weight: 700;
-      // font-size: 18px;
+      font-size: 18px;
       // line-height: 1.33;
       font-size: 14px;
-      line-height: 1.0;
+      line-height: 1.14;
     }
   }
 }
@@ -124,9 +203,9 @@
   &:hover,
   &:focus,
   &.active {
-      color: var(--categoris-black-focus-color);
-      transition-duration: var(--duration);
-}
+    color: var(--categoris-black-focus-color);
+    transition-duration: var(--duration);
+  }
 }
 
 .books {
@@ -149,7 +228,6 @@
 
 .book-container {
   margin-right: 0;
-
 
   @media screen and (min-width: 1440px) {
     margin-left: 40px;
@@ -182,7 +260,7 @@
 
 .book-block.dark,
 .book-block.dark::-webkit-scrollbar {
-   background-color: var(--body-black-background-color);
+  background-color: var(--body-black-background-color);
 }
 
 .book-block::-webkit-scrollbar-thumb {
@@ -195,7 +273,7 @@
 
 .book-block::-webkit-scrollbar-thumb {
   background: #e0e0e0;
- 
+
   border-radius: 12px;
 }
 .book-block.dark::-webkit-scrollbar-thumb {
